@@ -86,7 +86,7 @@ export default function ContactForm() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="bg-gray-800 rounded-2xl p-8"
+            className="bg-primary-color-light rounded-2xl p-8"
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>

@@ -5,7 +5,6 @@ import CTASection from "@/components/home/CTASection";
 import TechStackSection from "@/components/home/TechStackSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import { currentUrl, email, phone, address, linkedinLink } from "@/assets/data";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 const structuredData = {
   "@context": "https://kagohillfarm.com",
@@ -102,7 +101,7 @@ export default function HomePage() {
       <WhyChooseSection />
       <TechStackSection />
       <ProcessSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <CTASection />
     </>
   );

@@ -5,6 +5,7 @@
   /* --foreground: #171717; */
   --foreground: #100B08;
   --primary-color: #1C0F01;
+  --primary-color-light: #361D01;
 
 }
 
@@ -34,6 +35,15 @@ body {
   color: var(--primary-color);
 }
 
+.primary-color-light {
+  /* color: var(--color-gray-800); */
+  color: var(--primary-color-light);
+}
+
 .bg-primary-color {
   background-color: var(--primary-color);
+}
+
+.bg-primary-color-light {
+  background-color: var(--primary-color-light);
 }

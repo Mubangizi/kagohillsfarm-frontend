@@ -4,7 +4,7 @@ import { FiPhone, FiMail, FiMessageCircle } from "react-icons/fi";
 
 export default function CTASection() {
   return (
-    <div className="primary-color">
+    <div className="bg-primary-color">
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <motion.div
@@ -14,12 +14,10 @@ export default function CTASection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to start your project?
-              <br />
-              Let&apos;s build something amazing together.
+            Support the Mission. Strengthen the Community.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-              Get a free consultation and project estimate. We&apos;ll discuss your goals and show you how we can help transform your business with the right technology solutions.
+            <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-gray-300">
+            Your contribution helps us expand women&apos;s training programs, improve processing facilities, and uplift coffee-farming families. Whether you want to donate to our social-impact work or explore business opportunities for premium Ugandan coffee, we welcome your partnership.
             </p>
           </motion.div>
 
@@ -34,17 +32,19 @@ export default function CTASection() {
               href="/contact#contact-form"
               className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold primary-color shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Get Free Consultation
+              Donate
             </a>
-            {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
-              View Our Work <span aria-hidden="true">→</span>
-             </a> */}
+            <a href="#" className="text-sm font-semibold leading-6 text-white">
+              Get started <span aria-hidden="true">→</span>
+             </a>
           </motion.div>
         </div>
       </div>
 
       {/* Contact options */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-gray-800" style={{
+        borderColor: 'var(--primary-color-light)'
+      }}>
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export default function CTASection() {
                     viewport={{ once: true }}
                     className="text-center"
                   >
-                    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-gray-800">
+                    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-primary-color-light">
                       <IconComponent className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     <h3 className="mt-4 text-lg font-semibold text-white">{contact.title}</h3>

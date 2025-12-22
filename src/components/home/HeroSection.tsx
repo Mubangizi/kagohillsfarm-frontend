@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <div className="relative min-h-screen">
-      <div className="mx-auto max-w-2xl min-h-screen flex flex-col items-center justify-center">
+      <div className="mx-auto max-w-4xl min-h-screen flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,9 +33,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-5xl font-semibold tracking-tight text-balance primary-color sm:text-7xl"
+            className="text-5xl font-semibold tracking-tight text-balance primary-color sm:text-6xl"
           >
-            Your Strategic Partner in <span className="text-gray-800">Digital Transformation</span>
+            Exceptional Coffee Grown with Purpose. <span className="primary-color-light">Impact Rooted in Community.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
           >
-            From concept to deployment, we deliver scalable web, mobile & AI solutions that transform your business and drive measurable growth.
+            To bring world quality coffee to the international market while creating employment opportunities for the underserced communities in Kago
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

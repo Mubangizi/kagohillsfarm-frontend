@@ -4,24 +4,24 @@ import { FiAward, FiUsers, FiZap, FiShield } from "react-icons/fi";
 
 const features = [
   {
-    name: "Proven Track Record",
-    description: "Over 15 years of experience delivering successful projects for startups to Fortune 500 companies.",
-    icon: FiAward,
-  },
-  {
-    name: "Expert Team",
-    description: "Senior developers, architects, and consultants with deep expertise across modern technology stacks.",
+    name: "Premium Ugandan Arabica",
+    description: "Grown in rich volcanic soils and processed with precision.",
     icon: FiUsers,
   },
   {
-    name: "Agile Delivery",
-    description: "Transparent, iterative development process with regular releases and continuous client collaboration.",
+    name: "Ethical & Sustainable Farming",
+    description: "Climate-smart, environmentally responsible techniques guide everything we do.",
     icon: FiZap,
   },
   {
-    name: "Quality Assurance",
-    description: "Rigorous testing, code reviews, and quality management processes ensure reliable, secure solutions.",
+    name: "High Social Impact",
+    description: "Every purchase supports farmers, women’s groups, and youth employment",
     icon: FiShield,
+  },
+  {
+    name: "Full Value Chain Control",
+    description: "From seedlings to storage and processing, we ensure consistent quality and fair returns for farmers.",
+    icon: FiAward,
   },
 ];
 
@@ -30,7 +30,7 @@ export default function WhyChooseSection() {
   return (
     <div className="bg-primary-color py-24 sm:py-32">
       
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-9xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,10 +40,10 @@ export default function WhyChooseSection() {
         >
           <h2 className="text-base font-semibold leading-7 text-gray-300">Why Choose Kago Hill Farm</h2>
           <p className="mt-2 text-3xl font-bold max-w-2xl mx-auto tracking-tight text-gray-200 sm:text-4xl">
-            Your trusted technology partner for digital success
+            Your trusted Coffee Farm
           </p>
           <p className="mt-3 text-lg leading-8 text-gray-400 mx-auto">
-            We combine technical excellence with business acumen to deliver solutions that drive real results and long-term value.
+          Our unique model integrates ethical farming, quality-first production, and community empowerment, delivering coffee that creates meaningful impact.
           </p>
         </motion.div>
 

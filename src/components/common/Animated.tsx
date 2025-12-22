@@ -8,11 +8,17 @@ export const AnimatedBackground = () => {
     <motion.div
       className="fixed inset-0 -z-10"
       animate={{
+        // background: [
+        //   "linear-gradient(45deg, #f9fafb, #f3f4f6)",
+        //   "linear-gradient(45deg, #f3f4f6, #e5e7eb)",
+        //   "linear-gradient(45deg, #e5e7eb, #f1f5f9)",
+        //   "linear-gradient(45deg, #f1f5f9, #f9fafb)",
+        // ],
         background: [
-          "linear-gradient(45deg, #f9fafb, #f3f4f6)",
-          "linear-gradient(45deg, #f3f4f6, #e5e7eb)",
-          "linear-gradient(45deg, #e5e7eb, #f1f5f9)",
-          "linear-gradient(45deg, #f1f5f9, #f9fafb)",
+          "linear-gradient(45deg, #faf7f2, #f5f0e8)",
+          "linear-gradient(45deg, #f5f0e8, #efe7dd)",
+          "linear-gradient(45deg, #efe7dd, #f7f3ec)",
+          "linear-gradient(45deg, #f7f3ec, #faf7f2)",
         ],
       }}
       transition={{
@@ -69,7 +75,7 @@ export const ParticleBackground = ({ transparent = false }) => {
     );
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.005,
-      color: "#bbb",
+      color: "#b08968",
       transparent: true,
       opacity: 0.8,
       sizeAttenuation: true,

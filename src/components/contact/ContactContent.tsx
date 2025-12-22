@@ -65,7 +65,7 @@ export default function ContactContent() {
             transition={{ duration: 0.7 }}
           >
             <h1 className="text-5xl font-semibold tracking-tight text-balance primary-color sm:text-7xl">
-              Get in <span className="text-gray-800">Touch</span>
+              Get in <span className="primary-color-light">Touch</span>
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
               Ready to start your digital transformation? Let&apos;s discuss how we can help you achieve your goals.
