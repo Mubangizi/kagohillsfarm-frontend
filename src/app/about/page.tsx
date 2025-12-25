@@ -2,11 +2,11 @@ import { currentUrl } from "@/assets/data";
 import AboutContent from "@/components/about/AboutContent";
 
 export const metadata = {
-  title: "About Us - Leading Digital Transformation Partner",
-  description: "Learn about kago Hill Farm's mission, values, and expert team. We're passionate about delivering scalable digital solutions that transform businesses and drive growth.",
+  title: "About Us - Women-Led Coffee Farm Empowering Communities",
+  description: "Inspired by Margaret Mugisha's entrepreneurial journey, Kago Hill Farm transforms lives through sustainable coffee farming, women's empowerment, and community development in Kambuga, Kanungu.",
   openGraph: {
-    title: "About kago Hill Farm - Your Strategic Coffee Partner",
-    description: "Discover how our expert team delivers cutting-edge digital solutions that transform businesses worldwide.",
+    title: "About Kago Hill Farm - Our Story of Coffee & Community",
+    description: "From a mother's legacy to a thriving women-led coffee enterprise empowering families and creating world-class Ugandan coffee.",
     url: `${currentUrl}/about`,
   },
 };

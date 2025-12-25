@@ -5,22 +5,22 @@ import AnimatedButton from "@/components/common/Buttons";
 
 const teamMembers = [
   {
-    name: "John Smith",
-    role: "CEO & Founder",
-    description: "15+ years in digital transformation, former CTO at major tech companies.",
-    image: "/team/ceo.jpg"
+    name: "Margaret Mugisha",
+    role: "Founder & Inspiration",
+    description: "An entrepreneurial pioneer whose coffee trading legacy built opportunities for families across Kambuga.",
+    image: "/team/margaret.jpg"
   },
   {
-    name: "Michael Chen",
-    role: "Lead Designer",
-    description: "UX/UI expert with a passion for creating intuitive, user-centered digital experiences.",
-    image: "/team/designer.jpg"
+    name: "Yvonne Atwiine Mwesige",
+    role: "Program Director",
+    description: "Leading community empowerment initiatives, women's training programs, and sustainable farming practices.",
+    image: "/team/yvonne.jpg"
   },
   {
-    name: "Emily Rodriguez",
-    role: "Project Manager",
-    description: "Agile specialist ensuring seamless delivery and client satisfaction.",
-    image: "/team/pm.jpg"
+    name: "Community Partners",
+    role: "30+ Women Farmers",
+    description: "Dedicated women working daily in coffee cultivation, processing, and value addition.",
+    image: "/team/community.jpg"
   }
 ];
 
@@ -59,10 +59,10 @@ const problems = [
 ];
 
 const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "50+", label: "Projects Delivered" },
-  { value: "30+", label: "Happy Clients" },
-  { value: "99%", label: "Client Satisfaction" }
+  { value: "2019", label: "Farm Established" },
+  { value: "20+", label: "Acres of Coffee" },
+  { value: "30+", label: "Women Employed" },
+  { value: "100%", label: "Arabica Quality" }
 ];
 
 export default function AboutContent() {
@@ -80,7 +80,7 @@ export default function AboutContent() {
               About <div className="primary-color-light">kago Hill Farm</div>
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            Kago Hill Farm is a women-led coffee enterprise rooted in the scenic hills of Kambuga, Kanungu District. We are committed to transforming local livelihoods through sustainable coffee farming, value addition, and women’s economic empowerment.
+              Kago Hill Farm is a women-led coffee enterprise rooted in the scenic hills of Kambuga, Kanungu District. We are committed to transforming local livelihoods through sustainable coffee farming, value addition, and women’s economic empowerment.
             </p>
           </motion.div>
         </div>
@@ -102,13 +102,13 @@ export default function AboutContent() {
             </p>
             <div className="mt-8 space-y-6 text-lg leading-8 text-gray-600">
               <p>
-              Kago Hill Farm is inspired by the remarkable journey of our mother, Mrs. Margaret Mugisha, whose entrepreneurial resilience built a legacy of opportunity for her six children and the wider community.
+                Kago Hill Farm is inspired by the remarkable journey of our mother, Mrs. Margaret Mugisha, whose entrepreneurial resilience built a legacy of opportunity for her six children and the wider community.
               </p>
               <p>
-              Through selling mandazi, supplying milk, and later trading coffee, she discovered the transformative power of coffee as a sustainable livelihood. Her success motivated families across Kambuga to plant more trees, invest in farming, and pursue better lives.
+                Through selling mandazi, supplying milk, and later trading coffee, she discovered the transformative power of coffee as a sustainable livelihood. Her success motivated families across Kambuga to plant more trees, invest in farming, and pursue better lives.
               </p>
               <p>
-              Today, her story guides our mission <span className="primary-color-light">To use coffee as a tool for economic and social upliftment.</span>
+                Today, her story guides our mission <span className="primary-color-light">To use coffee as a tool for economic and social upliftment.</span>
               </p>
             </div>
           </motion.div>
@@ -142,7 +142,7 @@ export default function AboutContent() {
               >
                 <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
                 <p className="text-gray-300 leading-7">
-                To empower women and smallholder farmers through sustainable coffee farming, value addition, training, and reliable market access—ensuring communities achieve stable and dignified livelihoods.
+                  To empower women and smallholder farmers through sustainable coffee farming, value addition, training, and reliable market access—ensuring communities achieve stable and dignified livelihoods.
                 </p>
               </motion.div>
 
@@ -155,7 +155,7 @@ export default function AboutContent() {
               >
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-gray-300 leading-7">
-                To be a leading model of sustainable, women-led coffee farming that transforms rural communities and elevates livelihoods across Uganda.
+                  To be a leading model of sustainable, women-led coffee farming that transforms rural communities and elevates livelihoods across Uganda.
                 </p>
               </motion.div>
             </div>
@@ -175,7 +175,7 @@ export default function AboutContent() {
           >
             <h2 className="text-base font-semibold leading-7 text-gray-600">The Problem we solve</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight primary-color sm:text-4xl">
-            Local Communities like Kambuga face significant challenges
+              Local Communities like Kambuga face significant challenges
             </p>
           </motion.div>
 
@@ -206,7 +206,7 @@ export default function AboutContent() {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-primary-color py-24 sm:py-32" style={{ display: 'none' }}>
+      <div className="bg-primary-color py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -216,7 +216,7 @@ export default function AboutContent() {
             className="mx-auto max-w-4xl text-center"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Trusted by businesses worldwide
+              Growing Impact Since 2019
             </h2>
           </motion.div>
 
@@ -255,7 +255,7 @@ export default function AboutContent() {
               The experts behind your success
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our diverse team of senior developers, designers, and consultants brings decades of combined experience to every project.
+              Our team combines entrepreneurial spirit, agricultural expertise, and a deep commitment to community empowerment.
             </p>
           </motion.div>
 
@@ -296,14 +296,14 @@ export default function AboutContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to transform your business?
+              Ready to partner with us?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-              Let&apos;s discuss how our expertise can help you achieve your digital transformation goals.
+              Join us in transforming lives through sustainable coffee farming and community empowerment.
             </p>
             <div className="mt-10">
               <AnimatedButton href="/contact">
-                Get Started Today
+                Partner With Us
               </AnimatedButton>
             </div>
           </motion.div>

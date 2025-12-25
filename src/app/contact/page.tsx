@@ -3,11 +3,11 @@ import ContactContent from "@/components/contact/ContactContent";
 
 
 export const metadata = {
-  title: "Contact Us - Get in Touch with kago Hill Farm",
-  description: "Ready to start your digital transformation? Contact kago Hill Farm today for a free consultation. We're here to help you achieve your technology goals.",
+  title: "Contact Us - Partner with Kago Hill Farm",
+  description: "Connect with Kago Hill Farm to partner with us, invest in sustainable coffee farming, or learn about our women's empowerment programs in Kambuga, Kanungu.",
   openGraph: {
-    title: "Contact kago Hill Farm - How to work with us",
-    description: "Get in touch with our expert team. Free consultation available to discuss your project needs and goals.",
+    title: "Contact Kago Hill Farm - Partner With Us",
+    description: "Join us in transforming lives through coffee. Support our mission to empower women and communities in Uganda.",
     url: `${currentUrl}/contact`,
   },
 };

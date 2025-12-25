@@ -34,8 +34,8 @@ export default function CTASection() {
             >
               Donate
             </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-white">
-              Get started <span aria-hidden="true">→</span>
+            <a href="/contact" className="text-sm font-semibold leading-6 text-white">
+              Learn more <span aria-hidden="true">→</span>
              </a>
           </motion.div>
         </div>
@@ -61,19 +61,19 @@ export default function CTASection() {
                   icon: FiPhone,
                   title: "Call Us",
                   description: "Speak directly with our team",
-                  action: "+256 705754073"
+                  action: "+256 774 383 575"
                 },
                 {
                   icon: FiMail,
                   title: "Email Us", 
                   description: "Get a detailed response",
-                  action: "info@kagohillfarm.com"
+                  action: "yvonneatwiine@gmail.com"
                 },
                 {
                   icon: FiMessageCircle,
-                  title: "Live Chat",
-                  description: "Chat with our experts now",
-                  action: "Start Conversation"
+                  title: "Visit Us",
+                  description: "Kambuga, Kanungu District",
+                  action: "Uganda"
                 }
               ].map((contact, index) => {
                 const IconComponent = contact.icon;

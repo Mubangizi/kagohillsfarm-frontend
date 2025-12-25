@@ -3,42 +3,41 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
+// Clean, minimalist coffee-themed background
 export const AnimatedBackground = () => {
   return (
-    <motion.div
-      className="fixed inset-0 -z-10"
-      animate={{
-        // background: [
-        //   "linear-gradient(45deg, #f9fafb, #f3f4f6)",
-        //   "linear-gradient(45deg, #f3f4f6, #e5e7eb)",
-        //   "linear-gradient(45deg, #e5e7eb, #f1f5f9)",
-        //   "linear-gradient(45deg, #f1f5f9, #f9fafb)",
-        // ],
-        background: [
-          "linear-gradient(45deg, #faf7f2, #f5f0e8)",
-          "linear-gradient(45deg, #f5f0e8, #efe7dd)",
-          "linear-gradient(45deg, #efe7dd, #f7f3ec)",
-          "linear-gradient(45deg, #f7f3ec, #faf7f2)",
-        ],
-      }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* Subtle warm gradient */}
+      <motion.div
+        className="absolute inset-0"
+        animate={{
+          background: [
+            "linear-gradient(135deg, #faf8f5 0%, #f5f1eb 50%, #f0e9df 100%)",
+            "linear-gradient(135deg, #faf8f5 0%, #f3eee6 50%, #efe8dc 100%)",
+            "linear-gradient(135deg, #faf8f5 0%, #f5f1eb 50%, #f0e9df 100%)",
+          ],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    </div>
   );
 };
 
+// Minimal, elegant particle system
 export const ParticleBackground = ({ transparent = false }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
-
+    
+    const container = containerRef.current;
     const scene = new THREE.Scene();
     if (!transparent) {
-      scene.background = new THREE.Color(0xffffff); // Set white background
+      scene.background = new THREE.Color(0xffffff);
     }
 
     const camera = new THREE.PerspectiveCamera(
@@ -48,36 +47,36 @@ export const ParticleBackground = ({ transparent = false }) => {
       1000
     );
     const renderer = new THREE.WebGLRenderer({
-      alpha: !transparent,
-      antialias: true, // Add antialiasing for smoother particles
+      alpha: transparent,
+      antialias: true,
     });
 
     if (transparent) {
-      // Set clear color to transparent
       renderer.setClearColor(0x000000, 0);
     }
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    containerRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
-    // Create particles
+    // Simple, subtle particle system
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 5000;
+    const particlesCount = 8000; // Increased for denser particle field
     const posArray = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 5;
+      posArray[i] = (Math.random() - 0.5) * 6;
     }
 
     particlesGeometry.setAttribute(
       "position",
       new THREE.BufferAttribute(posArray, 3)
     );
+    
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.005,
-      color: "#b08968",
+      color: "#b8a590",
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.35, // More visible
       sizeAttenuation: true,
     });
 
@@ -86,7 +85,7 @@ export const ParticleBackground = ({ transparent = false }) => {
       particlesMaterial
     );
     scene.add(particlesMesh);
-    camera.position.z = 2;
+    camera.position.z = 2.5;
 
     // Handle window resize
     const handleResize = () => {
@@ -96,9 +95,11 @@ export const ParticleBackground = ({ transparent = false }) => {
     };
     window.addEventListener("resize", handleResize);
 
+    // Gentle animation
     const animate = () => {
       requestAnimationFrame(animate);
-      particlesMesh.rotation.y += 0.001;
+      particlesMesh.rotation.y += 0.0003; // Slower rotation
+      particlesMesh.rotation.x += 0.0001;
       renderer.render(scene, camera);
     };
 
@@ -106,9 +107,14 @@ export const ParticleBackground = ({ transparent = false }) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      particlesGeometry.dispose();
+      particlesMaterial.dispose();
       renderer.dispose();
+      if (container && renderer.domElement.parentNode) {
+        container.removeChild(renderer.domElement);
+      }
     };
-  }, []);
+  }, [transparent]);
 
-  return <div ref={containerRef} className="fixed inset-0 -z-10" />;
+  return <div ref={containerRef} className="fixed inset-0 -z-10 pointer-events-none" />;
 };

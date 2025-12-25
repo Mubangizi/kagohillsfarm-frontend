@@ -4,77 +4,90 @@ import ProcessSection from "@/components/home/ProcessSection";
 import CTASection from "@/components/home/CTASection";
 import TechStackSection from "@/components/home/TechStackSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
-import { currentUrl, email, phone, address, linkedinLink } from "@/assets/data";
+import { currentUrl, email, phone, linkedinLink } from "@/assets/data";
 
 const structuredData = {
   "@context": "https://kagohillfarm.com",
   "@type": "Organization",
-  "name": "kago Hill Farm",
+  "name": "Kago Hill Farm",
   "url": currentUrl,
   "logo": `${currentUrl}/logo.png`,
-  "description": "Strategic partner in digital transformation delivering scalable web, mobile & AI solutions that transform businesses and drive measurable growth.",
+  "description": "Women-led coffee enterprise in Kambuga, Kanungu creating world-class Ugandan coffee while empowering women, training youth, and transforming local livelihoods through sustainable farming.",
   "email": email,
   "telephone": phone,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": address.split(",")[0].trim(),
-    "addressCountry": address.split(",")[1].trim()
+    "streetAddress": "Kambuga",
+    "addressLocality": "Kanungu District",
+    "addressCountry": "Uganda"
   },
   "sameAs": [
     linkedinLink,
     "https://twitter.com/kagohillfarm"
   ],
   "serviceType": [
-    "Custom Software Development",
-    "Web Development", 
-    "Mobile App Development",
-    "AI Solutions",
-    "Cloud Services",
-    "DevOps",
-    "Digital Consulting"
+    "Coffee Farming",
+    "Coffee Processing",
+    "Barista Training",
+    "Women's Empowerment Programs",
+    "Agricultural Training",
+    "Coffee Tourism",
+    "Sustainable Agriculture"
   ],
-  "areaServed": "Global",
-  "foundingDate": "2020",
-  "numberOfEmployees": "10-50"
+  "areaServed": {
+    "@type": "Place",
+    "name": "Kambuga, Kanungu District, Uganda"
+  },
+  "foundingDate": "2019",
+  "numberOfEmployees": "30+",
+  "slogan": "Crafting Exceptional Coffee. Empowering Communities. Transforming Futures."
 };
 
 const serviceStructuredData = {
   "@context": "https://kagohillfarm.com",
   "@type": "Service",
-  "name": "Digital Transformation Services",
-  "description": "Comprehensive digital transformation services including custom software development, web and mobile applications, AI solutions, cloud infrastructure, and strategic consulting.",
+  "name": "Coffee Production & Community Empowerment Services",
+  "description": "Sustainable coffee farming, processing, women's empowerment programs, barista training, and agricultural education creating world-class Ugandan coffee.",
   "provider": {
     "@type": "Organization",
-    "name": "kago Hill Farm"
+    "name": "Kago Hill Farm"
   },
-  "serviceType": "Technology Consulting",
-  "areaServed": "Global",
+  "serviceType": "Agricultural Services",
+  "areaServed": "Kambuga, Kanungu District, Uganda",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Digital Services",
+    "name": "Coffee & Community Services",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Custom Software Development",
-          "description": "Tailored enterprise solutions built to scale with your business needs and integrate seamlessly with existing systems."
-        }
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Web & Mobile Development",
-          "description": "Modern, responsive applications that deliver exceptional user experiences across all devices and platforms."
+          "name": "Sustainable Coffee Farming",
+          "description": "Training and support for smallholder farmers in improved farming practices, climate-resilient methods, and quality coffee production."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service", 
-          "name": "AI & Data Analytics",
-          "description": "Intelligent solutions that transform your data into actionable insights and automated business processes."
+          "@type": "Service",
+          "name": "Coffee Processing & Value Addition",
+          "description": "Professional hulling, drying, grading, and processing services that enable farmers to earn premium prices for quality coffee."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Women's Empowerment & Training",
+          "description": "Structured programs for women in coffee farming, leadership, entrepreneurship, and economic independence."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Barista Training & Coffee Culture",
+          "description": "Youth skills development in barista training, coffee tasting, and modern agricultural methods."
         }
       }
     ]

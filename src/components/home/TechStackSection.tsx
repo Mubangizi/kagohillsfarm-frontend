@@ -10,75 +10,75 @@ import {
 
 const techCategories = [
   {
-    title: "Frontend",
-    description: "Modern frameworks and libraries for exceptional user experiences",
+    title: "Women's Groups",
+    description: "Partnering with local women's organizations for economic empowerment",
     technologies: [
-      { name: "React", icon: FiCode },
-      { name: "Next.js", icon: FiLayers },
-      { name: "Vue.js", icon: FiGlobe },
-      { name: "Angular", icon: FiMonitor },
-      { name: "TypeScript", icon: FiFileText },
-      { name: "Tailwind CSS", icon: FiEdit }
+      { name: "Kinkiizi Coffee SACCO", icon: FiCode },
+      { name: "Kakindo Women Group", icon: FiLayers },
+      { name: "Nyakagyezi Tweyambe", icon: FiGlobe },
+      { name: "Local SACCOs", icon: FiMonitor },
+      { name: "Self-Help Groups", icon: FiFileText },
+      { name: "Farmer Cooperatives", icon: FiEdit }
     ]
   },
   {
-    title: "Backend",
-    description: "Robust server-side technologies for scalable applications",
+    title: "Training Partners",
+    description: "Educational institutions supporting skills development and capacity building",
     technologies: [
-      { name: "Node.js", icon: FiServer },
-      { name: "Python", icon: FiDatabase },
-      { name: "Java", icon: FiCoffee },
-      { name: ".NET", icon: FiBox },
-      { name: "PHP", icon: FiHash },
-      { name: "Go", icon: FiTrendingUp }
+      { name: "Coffee Farm School", icon: FiServer },
+      { name: "NAADS Extension", icon: FiDatabase },
+      { name: "Agronomy Experts", icon: FiCoffee },
+      { name: "Barista Training", icon: FiBox },
+      { name: "Leadership Programs", icon: FiHash },
+      { name: "Financial Literacy", icon: FiTrendingUp }
     ]
   },
   {
-    title: "Mobile",
-    description: "Cross-platform and native mobile development solutions",
+    title: "Financial Partners",
+    description: "Banking and financial institutions enabling farmer access to credit and markets",
     technologies: [
-      { name: "React Native", icon: FiSmartphone },
-      { name: "Flutter", icon: FiTablet },
-      { name: "iOS Swift", icon: FiCircle },
-      { name: "Android Kotlin", icon: FiSquare },
-      { name: "Xamarin", icon: FiGrid },
-      { name: "Ionic", icon: FiZap }
+      { name: "Centenary Bank", icon: FiSmartphone },
+      { name: "PostBank Uganda", icon: FiTablet },
+      { name: "Local SACCOs", icon: FiCircle },
+      { name: "Microfinance Groups", icon: FiSquare },
+      { name: "Warehouse Receipts", icon: FiGrid },
+      { name: "Credit Access", icon: FiZap }
     ]
   },
   {
-    title: "Cloud & DevOps",
-    description: "Infrastructure and deployment automation at scale",
+    title: "Community Network",
+    description: "Local farmers and community members driving sustainable growth",
     technologies: [
-      { name: "AWS", icon: FiCloud },
-      { name: "Azure", icon: FiSettings },
-      { name: "Google Cloud", icon: FiKey },
-      { name: "Docker", icon: FiPackage },
-      { name: "Kubernetes", icon: FiRotateCw },
-      { name: "Jenkins", icon: FiTool }
+      { name: "Banyakinkiizi Assoc.", icon: FiCloud },
+      { name: "Smallholder Farmers", icon: FiSettings },
+      { name: "Coffee Growers", icon: FiKey },
+      { name: "Coffee Processors", icon: FiPackage },
+      { name: "Local Businesses", icon: FiRotateCw },
+      { name: "Community Leaders", icon: FiTool }
     ]
   },
   {
-    title: "Database",
-    description: "Data storage and management solutions for any scale",
+    title: "Government & NGOs",
+    description: "Policy support and development programs for agricultural advancement",
     technologies: [
-      { name: "PostgreSQL", icon: FiHardDrive },
-      { name: "MongoDB", icon: FiBookOpen },
-      { name: "MySQL", icon: FiDatabase },
-      { name: "Redis", icon: FiSearch },
-      { name: "ElasticSearch", icon: FiActivity },
-      { name: "Firebase", icon: FiZap }
+      { name: "District Leaders", icon: FiHardDrive },
+      { name: "Agricultural Dept.", icon: FiBookOpen },
+      { name: "NGO Partners", icon: FiDatabase },
+      { name: "Extension Workers", icon: FiSearch },
+      { name: "Policy Makers", icon: FiActivity },
+      { name: "Development Orgs", icon: FiZap }
     ]
   },
   {
-    title: "AI & Analytics",
-    description: "Machine learning and data analytics for intelligent solutions",
+    title: "Tourism & Markets",
+    description: "Building coffee tourism and expanding market access for premium Ugandan coffee",
     technologies: [
-      { name: "TensorFlow", icon: FiCpu },
-      { name: "PyTorch", icon: FiActivity },
-      { name: "OpenAI API", icon: FiCode },
-      { name: "Apache Spark", icon: FiZap },
-      { name: "Tableau", icon: FiBarChart },
-      { name: "Power BI", icon: FiTrendingUp }
+      { name: "Tourism Boards", icon: FiCpu },
+      { name: "Export Markets", icon: FiActivity },
+      { name: "Local Retailers", icon: FiCode },
+      { name: "Coffee Buyers", icon: FiZap },
+      { name: "Tour Operators", icon: FiBarChart },
+      { name: "Marketing Partners", icon: FiTrendingUp }
     ]
   }
 ];
@@ -94,12 +94,12 @@ export default function TechStackSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-2xl lg:text-center"
         >
-          <h2 className="text-base font-semibold leading-7 primary-color">Technology Stack</h2>
+          <h2 className="text-base font-semibold leading-7 primary-color">Our Collaborators</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight primary-color sm:text-4xl">
-            Built with cutting-edge technologies
+            Building together for sustainable impact
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We leverage the latest technologies and frameworks to build scalable, secure, and high-performance solutions that grow with your business.
+            We work hand-in-hand with local communities, financial institutions, training organizations, and government partners to create lasting change through coffee.
           </p>
         </motion.div>
 

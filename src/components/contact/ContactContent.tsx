@@ -27,7 +27,7 @@ const contactMethods = [
     description: "Meet us at our office",
     detail: address,
     action: "#",
-    available: "By appointment only"
+    available: "Farm visits welcome"
   }
 ];
 
@@ -40,16 +40,15 @@ const socialLinks = [
   },
   {
     icon: FiTwitter,
-    name: "Twitter", 
+    name: "Twitter",
     href: twitterLink,
     description: "Follow us for updates"
   }
 ];
 
 const officeHours = [
-  { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
-  { day: "Saturday", hours: "10:00 AM - 2:00 PM" },
-  { day: "Sunday", hours: "Closed" }
+  { day: "Monday - Saturday", hours: "8:00 AM - 5:00 PM" },
+  { day: "Sunday", hours: "By appointment" }
 ];
 
 export default function ContactContent() {
@@ -57,7 +56,7 @@ export default function ContactContent() {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <div className="relative min-h-[70vh] flex items-center justify-center">
+      <div className="relative min-h-[50vh] flex items-center justify-center">
         <div className="mx-auto max-w-2xl text-center px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,7 +67,7 @@ export default function ContactContent() {
               Get in <span className="primary-color-light">Touch</span>
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-              Ready to start your digital transformation? Let&apos;s discuss how we can help you achieve your goals.
+              Ready to partner with us? Let&apos;s discuss how you can support our mission to empower communities through sustainable coffee farming.
             </p>
           </motion.div>
         </div>
@@ -109,7 +108,7 @@ export default function ContactContent() {
                     <h3 className="mt-6 text-xl font-semibold primary-color">{method.title}</h3>
                     <p className="mt-2 text-gray-600">{method.description}</p>
                     <div className="mt-4">
-                      <a 
+                      <a
                         href={method.action}
                         className="text-lg font-medium primary-color hover:text-gray-700"
                       >
@@ -139,14 +138,14 @@ export default function ContactContent() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold tracking-tight primary-color sm:text-4xl">
-                Visit Our Office
+                Visit Our Farm
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Located in the heart of Kampala, our office is open for consultations and meetings. We welcome clients to visit and discuss their projects in person.
+                Located in the scenic hills of Kambuga, Kanungu District, our farm is open for visits and consultations. We welcome partners, investors, and coffee enthusiasts to experience our work firsthand.
               </p>
 
               <div className="mt-8">
-                <h3 className="text-lg font-semibold primary-color mb-4">Office Hours</h3>
+                <h3 className="text-lg font-semibold primary-color mb-4">Farm Hours</h3>
                 <div className="space-y-2">
                   {officeHours.map((schedule, index) => (
                     <div key={index} className="flex justify-between">
@@ -192,7 +191,7 @@ export default function ContactContent() {
               <div className="text-center">
                 <FiMapPin className="h-12 w-12 text-gray-400 mx-auto" />
                 <p className="mt-4 text-gray-600">Interactive map coming soon</p>
-                <p className="text-sm text-gray-500 mt-2">Kampala, Uganda</p>
+                <p className="text-sm text-gray-500 mt-2">Kambuga, Kanungu District, Uganda</p>
               </div>
             </motion.div>
           </div>

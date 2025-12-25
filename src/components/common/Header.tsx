@@ -10,11 +10,15 @@ import { Logoicon } from "@/assets/images";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Gallery", href: "/gallery" },
+  { name: "Our Impact", href: "/about#impact" },
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  light?: boolean;
+}
+
+export default function Header({ light = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,15 +31,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const textColor = light && !isScrolled ? "text-gray-100" : "text-[var(--primary-color)]";
+  const iconColor = light && !isScrolled ? "text-gray-100" : "text-gray-700";
+
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Global"
-        className={`mx-auto flex items-center justify-between p-6 lg:px-8 lg:py-3 fixed w-full transition-all duration-200 ${
-          isScrolled
-            ? "bg-white/70 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
-        }`}
+        className={`mx-auto flex items-center justify-between p-6 lg:px-8 lg:py-3 fixed w-full transition-all duration-200 ${isScrolled
+          ? "bg-white/70 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+          }`}
       >
         <div className="flex lg:flex-1">
           <AnimatedButton
@@ -44,8 +50,8 @@ export default function Header() {
             className="flex items-center gap-x-2 -m-1.5 p-1.5"
           >
             <Image alt="Kago Hill Farm" src={Logoicon} width={40} height={40} />
-            <span className="text-2xl font-semibold tracking-tight text-balance text-[var(--primary-color)]">
-            Kago Hill Farm
+            <span className={`text-2xl font-semibold tracking-tight text-balance transition-colors duration-200 ${textColor}`}>
+              Kago Hill Farm
             </span>
           </AnimatedButton>
         </div>
@@ -53,7 +59,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 ${iconColor}`}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
@@ -65,14 +71,19 @@ export default function Header() {
               key={item.name}
               href={item.href}
               variant="secondary"
+              className={light && !isScrolled ? "!text-gray-100 hover:!text-white transition-colors duration-200" : "transition-colors duration-200"}
             >
               {item.name}
             </AnimatedButton>
           ))}
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <AnimatedButton href="#" variant="secondary">
-            Get Started
+          <AnimatedButton
+            href="/contact"
+            variant="secondary"
+            className={light && !isScrolled ? "!text-gray-100 hover:!text-white transition-colors duration-200" : "transition-colors duration-200"}
+          >
+            Partner With Us
           </AnimatedButton>
         </div>
       </nav>
@@ -111,8 +122,8 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6">
-                <AnimatedButton href="#" variant="secondary">
-                  Get Started
+                <AnimatedButton href="/contact" variant="secondary">
+                  Partner With Us
                 </AnimatedButton>
               </div>
             </div>

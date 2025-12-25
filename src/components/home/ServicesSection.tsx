@@ -1,38 +1,44 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  FiCode,
-  FiSmartphone,
-  FiCloud,
   FiCheck,
   FiArrowRight,
 } from "react-icons/fi";
+import { GiCoffeeBeans, GiFactory, GiBookshelf } from "react-icons/gi";
 
 const services = [
   {
     title: "Sustainable Coffee Farming",
     description:
       "We cultivate high-altitude Arabica coffee using environmentally friendly practices that enhance soil health, yield, and long-term productivity.",
-    icon: FiCode,
+    icon: GiCoffeeBeans,
     features: [
-      "Enterprise Applications",
-      "SaaS Platforms",
-      "Legacy Modernization",
+      "Climate-smart farming techniques",
+      "Improved agronomic practices",
+      "Farmer training & support",
     ],
   },
   {
     title: "Value Addition & Processing",
     description:
       "We process coffee from cherry to clean bean, ensuring improved quality, storage, grading, and access to premium markets.",
-    icon: FiSmartphone,
-    // features: ["Progressive Web Apps", "Native Mobile Apps", "Cross-Platform Solutions"]
+    icon: GiFactory,
+    features: [
+      "Professional hulling & drying",
+      "Quality grading & sorting",
+      "Warehouse receipt systems",
+    ]
   },
   {
     title: "Training & Community Empowerment",
     description:
       "We equip women and youth with skills in modern agronomy, barista craft, leadership, and financial literacy, positioning them for economic growth.",
-    icon: FiCloud,
-    // features: ["Cloud Migration", "DevOps Automation", "Infrastructure as Code"]
+    icon: GiBookshelf,
+    features: [
+      "Women's leadership programs",
+      "Barista training & certification",
+      "Youth agricultural education",
+    ]
   },
 ];
 
@@ -137,10 +143,10 @@ export default function ServicesSection() {
           className="mt-16 flex justify-center"
         >
           <a
-            href="#"
+            href="/contact"
             className="inline-flex items-center gap-x-1.5 rounded-md bg-primary-color px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            Explore all services
+            Partner with us
             <FiArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </motion.div>

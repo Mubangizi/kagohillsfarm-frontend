@@ -7,28 +7,28 @@ import { LogoDarkIcon } from "@/assets/images";
 
 const navigation = {
   product: [
-    { name: "Features", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Releases", href: "#" },
+    { name: "Our Coffee", href: "#" },
+    { name: "Processing", href: "#" },
+    { name: "Farm Visits", href: "#" },
+    { name: "Coffee Tourism", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Story", href: "/about" },
+    { name: "Team", href: "/about" },
+    { name: "Impact", href: "/about" },
   ],
   resources: [
-    { name: "Community", href: "#" },
-    { name: "Help Center", href: "#" },
-    { name: "Partners", href: "#" },
-    { name: "Status", href: "#" },
+    { name: "Women's Programs", href: "#" },
+    { name: "Training", href: "#" },
+    { name: "Partnerships", href: "#" },
+    { name: "Support Us", href: "/contact" },
   ],
   legal: [
     { name: "Privacy Policy", href: "#" },
     { name: "Terms of Service", href: "#" },
     { name: "Cookie Policy", href: "#" },
-    { name: "Licenses", href: "#" },
+    { name: "Contact", href: "/contact" },
   ],
   social: [
     {
@@ -71,7 +71,7 @@ const Footer = () => {
                 </span>
               </Link>
               <p className="text-sm leading-6 text-gray-300">
-                Building for the future
+                Crafting exceptional coffee, empowering communities
               </p>
             </div>
             <div className="flex space-x-6">

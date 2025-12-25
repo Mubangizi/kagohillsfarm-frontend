@@ -16,53 +16,53 @@ import {
 const processSteps = [
   {
     step: "01",
-    name: "Discovery & Planning",
-    description: "We analyze your requirements, define project scope, and create a detailed roadmap with clear milestones.",
-    details: ["Requirements Analysis", "Technical Architecture", "Project Timeline", "Risk Assessment"],
+    name: "Planting & Cultivation",
+    description: "We plant high-quality Arabica seedlings and nurture them using climate-smart, sustainable farming practices.",
+    details: ["Quality seedling selection", "Soil health management", "Climate-smart techniques", "Organic farming practices"],
     icon: FiSearch
   },
   {
     step: "02", 
-    name: "Design & Prototyping",
-    description: "Creating intuitive user experiences and technical specifications before development begins.",
-    details: ["UI/UX Design", "System Architecture", "Database Design", "API Specifications"],
+    name: "Growing & Maintenance",
+    description: "Careful tending of coffee trees with proper pruning, mulching, and pest management for optimal growth.",
+    details: ["Regular pruning", "Mulching & composting", "Natural pest control", "Shade tree management"],
     icon: FiPenTool
   },
   {
     step: "03",
-    name: "Agile Development",
-    description: "Iterative development with regular demos, feedback loops, and continuous integration.",
-    details: ["Sprint Planning", "Daily Standups", "Code Reviews", "Continuous Testing"],
+    name: "Harvesting",
+    description: "Selective hand-picking of ripe coffee cherries at peak maturity to ensure premium quality.",
+    details: ["Hand-picking techniques", "Cherry selection", "Multiple harvest passes", "Quality control"],
     icon: FiZap
   },
   {
     step: "04",
-    name: "Quality Assurance",
-    description: "Comprehensive testing across all scenarios to ensure reliability, security, and performance.",
-    details: ["Automated Testing", "Security Audits", "Performance Testing", "User Acceptance Testing"],
+    name: "Processing",
+    description: "Professional processing including pulping, fermentation, washing, and drying to preserve coffee quality.",
+    details: ["Cherry pulping", "Fermentation control", "Clean water washing", "Sun drying on raised beds"],
     icon: FiShield
   },
   {
     step: "05",
-    name: "Deployment & Launch", 
-    description: "Seamless deployment with monitoring, documentation, and team training for successful launch.",
-    details: ["Production Deployment", "Monitoring Setup", "Documentation", "Team Training"],
+    name: "Hulling & Grading", 
+    description: "Mechanical hulling removes parchment, followed by careful grading and sorting for market-ready green beans.",
+    details: ["Mechanical hulling", "Size grading", "Quality sorting", "Defect removal"],
     icon: FiTool
   },
   {
     step: "06",
-    name: "Support & Evolution",
-    description: "Ongoing maintenance, updates, and feature enhancements to keep your solution current.", 
-    details: ["24/7 Monitoring", "Regular Updates", "Feature Enhancements", "Technical Support"],
+    name: "Storage & Marketing",
+    description: "Proper storage in warehouses with climate control, leading to better pricing and market access.", 
+    details: ["Warehouse storage", "Quality preservation", "Warehouse receipts", "Market linkages"],
     icon: FiSettings
   }
 ];
 
 const methodologies = [
-  { name: "Agile/Scrum", description: "Iterative development with regular feedback", icon: FiRotateCw },
-  { name: "DevOps", description: "Continuous integration and deployment", icon: FiSettings },
-  { name: "Clean Code", description: "Maintainable and scalable code practices", icon: FiStar },
-  { name: "CI/CD", description: "Automated testing and deployment pipelines", icon: FiRefreshCw }
+  { name: "Organic Methods", description: "Chemical-free, environmentally sustainable farming", icon: FiRotateCw },
+  { name: "Women-Led", description: "Empowering women in all stages of production", icon: FiSettings },
+  { name: "Fair Trade", description: "Equitable pricing and transparent transactions", icon: FiStar },
+  { name: "Community-First", description: "Training, employment, and shared prosperity", icon: FiRefreshCw }
 ];
 
 export default function ProcessSection() {
@@ -78,10 +78,10 @@ export default function ProcessSection() {
         >
           <h2 className="text-base font-semibold leading-7 primary-color">Our Process</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight primary-color sm:text-4xl">
-            A proven methodology for successful delivery
+            From Seed to Cup with Excellence
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our structured approach ensures predictable outcomes, transparent communication, and successful project delivery from concept to launch.
+            Our end-to-end coffee production process ensures exceptional quality at every stage, from planting to processing and market delivery.
           </p>
         </motion.div>
 
@@ -138,10 +138,10 @@ export default function ProcessSection() {
           <div className="rounded-3xl bg-white p-8 sm:p-10 shadow-sm ring-1 ring-gray-200">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h3 className="text-lg font-semibold leading-8 primary-color">
-                Industry best practices
+                Our Core Values
               </h3>
               <p className="mt-2 text-base leading-7 text-gray-600">
-                We follow proven methodologies to ensure quality, efficiency, and reliability
+                We follow sustainable practices and ethical principles that benefit both coffee quality and our community
               </p>
             </div>
             <dl className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8">

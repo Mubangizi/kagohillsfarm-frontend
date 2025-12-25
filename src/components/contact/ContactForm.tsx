@@ -10,7 +10,6 @@ export default function ContactForm() {
     company: "",
     email: "",
     phone: "",
-    service: "",
     message: ""
   });
 
@@ -28,7 +27,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -46,7 +45,6 @@ export default function ContactForm() {
           company: "",
           email: "",
           phone: "",
-          service: "",
           message: ""
         });
       } else {
@@ -62,7 +60,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-primary-color py-24 sm:py-32" id="contact-form">
+    <div className=" py-24 sm:py-32" id="contact-form">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <motion.div
@@ -70,13 +68,13 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Start Your Project Today
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Partner With Us
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Fill out the form below and we&apos;ll get back to you within 24 hours with a detailed response.
+            <p className="mt-5 text-lg leading-8 text-gray-900">
+              Interested in supporting our mission, purchasing our coffee, or learning more? Fill out the form below and we&apos;ll get back to you within 24 hours.
             </p>
           </motion.div>
 
@@ -86,11 +84,14 @@ export default function ContactForm() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="bg-primary-color-light rounded-2xl p-8"
+            className="bg-white rounded-2xl p-8 shadow-md"
+            style={{
+              boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+            }}
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-white">
+                <label htmlFor="firstName" className="block text-sm font-medium text-gray-900">
                   First Name *
                 </label>
                 <input
@@ -100,12 +101,12 @@ export default function ContactForm() {
                   required
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                  className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
                 />
               </div>
 
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-white">
+                <label htmlFor="lastName" className="block text-sm font-medium text-gray-900">
                   Last Name *
                 </label>
                 <input
@@ -115,13 +116,13 @@ export default function ContactForm() {
                   required
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                  className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
                 />
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-white">
-                  Company
+                <label htmlFor="company" className="block text-sm font-medium text-gray-900">
+                  Organization / Company
                 </label>
                 <input
                   type="text"
@@ -129,12 +130,13 @@ export default function ContactForm() {
                   id="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                  placeholder="Optional"
+                  className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-900">
                   Email *
                 </label>
                 <input
@@ -144,12 +146,12 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                  className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-white">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-900">
                   Phone
                 </label>
                 <input
@@ -158,36 +160,16 @@ export default function ContactForm() {
                   id="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                  className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
                 />
               </div>
 
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-white">
-                  Service Interested In
-                </label>
-                <select
-                  name="service"
-                  id="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
-                >
-                  <option value="">Select a service</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="mobile-development">Mobile App Development</option>
-                  <option value="ai-solutions">AI Solutions</option>
-                  <option value="cloud-services">Cloud Services</option>
-                  <option value="consulting">Digital Consulting</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
 
             </div>
 
             <div className="mt-6">
-              <label htmlFor="message" className="block text-sm font-medium text-white">
-                Project Details *
+              <label htmlFor="message" className="block text-sm font-medium text-gray-900">
+                Details *
               </label>
               <textarea
                 name="message"
@@ -196,8 +178,8 @@ export default function ContactForm() {
                 required
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder="Tell us about your project, goals, and any specific requirements..."
-                className="mt-2 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-gray-400 focus:ring-gray-400 px-3 py-2"
+                placeholder="Tell us about your interest in partnering, investing, purchasing coffee, or visiting the farm..."
+                className="mt-2 block w-full rounded-md border-gray-700 bg-gray-200 text-gray-900 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] px-3 py-2"
               />
             </div>
 
