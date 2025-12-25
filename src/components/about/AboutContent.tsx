@@ -2,24 +2,39 @@
 import { motion } from "framer-motion";
 import { FiTarget, FiHeart, FiUsers, FiTrendingUp, FiShield, FiZap } from "react-icons/fi";
 import AnimatedButton from "@/components/common/Buttons";
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 
-const teamMembers = [
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  social?: {
+    email?: string;
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+  };
+};
+const teamMembers: TeamMember[] = [
   {
     name: "Margaret Mugisha",
     role: "Founder & Inspiration",
-    description: "An entrepreneurial pioneer whose coffee trading legacy built opportunities for families across Kambuga.",
-    image: "/team/margaret.jpg"
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&h=900&fit=crop&auto=format&sig=11",
+    social: {
+      linkedin: "https://www.linkedin.com/company/kagohillfarm/",
+      twitter: "https://twitter.com/kagohillfarm",
+      email: "yvonneatwiine@gmail.com",
+    },
   },
   {
     name: "Yvonne Atwiine Mwesige",
     role: "Program Director",
-    description: "Leading community empowerment initiatives, women's training programs, and sustainable farming practices.",
     image: "/team/yvonne.jpg"
   },
   {
     name: "Community Partners",
     role: "30+ Women Farmers",
-    description: "Dedicated women working daily in coffee cultivation, processing, and value addition.",
     image: "/team/community.jpg"
   }
 ];
@@ -270,14 +285,66 @@ export default function AboutContent() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
-                    <span className="text-2xl font-bold text-gray-600 align-center">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={index === 0}
+                      />
+                    </div>
                   </div>
-                  <h3 className="mt-6 text-xl font-semibold primary-color">{member.name}</h3>
+                  <h3 className="mt-4 text-xl font-semibold primary-color">{member.name}</h3>
                   <p className="text-gray-600 font-medium">{member.role}</p>
-                  <p className="mt-4 text-sm text-gray-500 leading-6">{member.description}</p>
+                  {member.social && (
+                    <div className="mt-3 flex items-center gap-2 text-gray-400 justify-center">
+                      {member.social.linkedin && (
+                        <a
+                          href={member.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on LinkedIn`}
+                          className="inline-flex h-9 w-9 items-center rounded-full justify-center transition-colors hover:bg-gray-100 hover:text-gray-600"
+                        >
+                          <FaLinkedinIn className="h-5 w-5" />
+                        </a>
+                      )}
+                      {member.social.twitter && (
+                        <a
+                          href={member.social.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on X (Twitter)`}
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100 hover:text-gray-600"
+                        >
+                          <FaTwitter className="h-5 w-5" />
+                        </a>
+                      )}
+                      {member.social.github && (
+                        <a
+                          href={member.social.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on GitHub`}
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100 hover:text-gray-600"
+                        >
+                          <FaGithub className="h-5 w-5" />
+                        </a>
+                      )}
+                      {member.social.email && (
+                        <a
+                          href={`mailto:${member.social.email}`}
+                          aria-label={`Email ${member.name}`}
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100 hover:text-gray-600"
+                        >
+                          <FaEnvelope className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
