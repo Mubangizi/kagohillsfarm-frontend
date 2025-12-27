@@ -13,7 +13,7 @@ interface AnimatedButtonProps {
 
 const buttonVariants = {
   primary:
-    "rounded-md bg-primary-color-light px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600",
+    "rounded-md bg-primary-color-light px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500",
   secondary: "text-sm/6 font-semibold primary-color",
 };
 

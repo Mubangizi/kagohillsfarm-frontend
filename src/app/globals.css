@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  /* --foreground: #171717; */
-  --foreground: #100B08;
-  --primary-color: #1C0F01;
-  --primary-color-light: #361D01;
+  /* Core surfaces */
+  --background: #fbf7f1; /* warm cream */
+  --foreground: #10201a; /* deep evergreen text */
+  --surface: #ffffff;
+  --surface-2: #f3efe7;
+
+  /* Brand palette */
+  --primary-color: #0b3d2e; /* forest green */
+  --primary-color-light: #0f5a43; /* evergreen */
+  --coffee-color: #6b3f1d; /* coffee brown */
+  --accent-color: #d08a1c; /* warm amber */
+  --accent-color-soft: #f3dfbd; /* soft amber */
+
+  /* UI */
+  --ring: #2e7d5f;
+  --muted: #5b6b63;
 
 }
 
@@ -18,13 +29,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #100B08;
-    --foreground: #ededed;
+    --background: #071a14;
+    --foreground: #eef6f2;
+    --surface: #0b241c;
+    --surface-2: #0e2c22;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  /* Subtle brand-tinted depth so sections don't feel flat */
+  background-image:
+    radial-gradient(900px 600px at 10% 0%, color-mix(in srgb, var(--accent-color-soft) 45%, transparent) 0%, transparent 60%),
+    radial-gradient(900px 600px at 100% 20%, color-mix(in srgb, var(--primary-color-light) 22%, transparent) 0%, transparent 55%),
+    radial-gradient(900px 600px at 60% 100%, color-mix(in srgb, var(--coffee-color) 18%, transparent) 0%, transparent 55%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,14 +55,29 @@ body {
 }
 
 .primary-color-light {
-  /* color: var(--color-gray-800); */
-  color: var(--primary-color-light);
+  /* use accent for highlighted text to add contrast */
+  color: var(--accent-color);
 }
 
 .bg-primary-color {
+  /* Rich gradient instead of a flat block color */
+  background-image:
+    radial-gradient(700px 350px at 10% 0%, color-mix(in srgb, var(--accent-color) 16%, transparent) 0%, transparent 65%),
+    radial-gradient(700px 350px at 90% 20%, color-mix(in srgb, var(--primary-color-light) 18%, transparent) 0%, transparent 65%),
+    linear-gradient(135deg, var(--primary-color) 0%, color-mix(in srgb, var(--primary-color) 70%, var(--coffee-color)) 100%);
   background-color: var(--primary-color);
 }
 
 .bg-primary-color-light {
+  background-image:
+    linear-gradient(135deg, var(--primary-color-light) 0%, color-mix(in srgb, var(--primary-color-light) 75%, var(--accent-color)) 100%);
   background-color: var(--primary-color-light);
+}
+
+/* Optional helpers for accents (useful as you refine UI) */
+.accent-color {
+  color: var(--accent-color);
+}
+.bg-accent-color {
+  background-color: var(--accent-color);
 }
