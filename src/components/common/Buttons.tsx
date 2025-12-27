@@ -9,6 +9,7 @@ interface AnimatedButtonProps {
   className?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  color?: string;
 }
 
 const buttonVariants = {
@@ -41,6 +42,7 @@ export default function AnimatedButton({
   children,
   variant = "primary",
   className = "",
+  color = "",
   type,
   disabled,
 }: AnimatedButtonProps) {
@@ -52,13 +54,16 @@ export default function AnimatedButton({
       className="cursor-pointer"
     >
       {href ? (
-        <Link href={href} className={`${buttonVariants[variant]} ${className}`}>
+        <Link href={href} className={`${buttonVariants[variant]} ${className}`}
+          style={{ color: color }}
+        >
           {children}
         </Link>
       ) : type ? (
         <button
           type={type}
-          className={`${className} ${!disabled && buttonVariants[variant]}`}
+          className={`${!disabled && buttonVariants[variant]} ${className}`}
+          style={{ color: color }}
           disabled={disabled}
         >
           {children}

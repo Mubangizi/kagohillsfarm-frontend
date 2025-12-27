@@ -6,26 +6,26 @@ import { useHeaderLight } from "@/components/providers/HeaderLightProvider";
 
 const slides = [
   {
-    title: "Exceptional Coffee Grown with Purpose",
-    subtitle: "Impact rooted in community.",
-    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920&q=80",
+    title: "Exceptional Coffee",
+    subtitle: "Grown with Purpose",
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920&q=85&auto=format&fit=crop",
     alt: "Coffee plantation at sunrise",
-    badge: "Single-origin Arabica",
+    badge: "100% Arabica",
     showStats: true,
   },
   {
-    title: "From Seed to Cup with Care",
-    subtitle: "Meticulous processing for premium quality.",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1920&q=80",
-    alt: "Coffee cherries being handpicked",
-    badge: "Premium processing",
+    title: "Women-Led",
+    subtitle: "Community-Driven",
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=85&auto=format&fit=crop",
+    alt: "Women farmers working together",
+    badge: "30+ Women Employed",
   },
   {
-    title: "Empowering Local Communities",
-    subtitle: "Training, fair wages, and sustainable growth.",
-    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80",
-    alt: "Coffee farmers smiling together",
-    badge: "Community-first",
+    title: "From Farm to Cup",
+    subtitle: "Quality at Every Step",
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1920&q=85&auto=format&fit=crop",
+    alt: "Coffee cherries being handpicked",
+    badge: "Sustainable Farming",
   },
 ];
 
@@ -89,23 +89,17 @@ export default function HeroSection() {
                       </div>
 
                       {/* Title */}
-                      <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
+                      <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-tight">
                         {slide.title}
-                        <span className="block mt-3 text-amber-200 sm:text-4xl lg:text-5xl font-semibold">
+                        <span className="block mt-2 text-amber-200 sm:text-5xl lg:text-6xl font-semibold">
                           {slide.subtitle}
                         </span>
                       </h1>
 
-                      {/* Description */}
-                      <p className="mt-6 text-lg sm:text-xl text-gray-100 leading-relaxed">
-                        To bring world-quality coffee to the international market while creating
-                        employment opportunities for the underserved communities in Kago.
-                      </p>
-
                       {/* Buttons */}
-                      <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+                      <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
                         <AnimatedButton href="/contact#contact-form">Partner With Us</AnimatedButton>
-                        <AnimatedButton variant="secondary" className="text-gray-100" href="/about">
+                        <AnimatedButton variant="secondary" color="#fff" href="/about">
                           Our Story
                         </AnimatedButton>
                       </div>
