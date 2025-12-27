@@ -84,7 +84,7 @@ export default function AboutContent() {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center">
+      <div className="relative min-h-[60vh] flex items-center justify-center">
         <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
