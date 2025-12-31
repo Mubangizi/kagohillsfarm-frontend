@@ -5,6 +5,7 @@ import HeaderWrapper from "@/components/common/HeaderWrapper";
 import Footer from "@/components/common/Footer";
 import { AnimatedBackground, ParticleBackground } from "@/components/common/Animated";
 import HeaderLightProvider from "@/components/providers/HeaderLightProvider";
+import PageLoader from "@/components/common/PageLoader";
 import { CURRENT_URL } from "@/assets/data";
 
 const geistSans = Geist({
@@ -100,6 +101,7 @@ export default function RootLayout({
           <HeaderWrapper />
           {children}
           <Footer />
+          <PageLoader />
         </HeaderLightProvider>
       </body>
     </html>
