@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next'
-import { currentUrl } from '@/assets/data'
+import { CURRENT_URL } from '@/assets/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = currentUrl
+  const baseUrl = CURRENT_URL
 
   // Define your static pages here
   const staticPages = [

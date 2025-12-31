@@ -40,10 +40,10 @@ body {
   background-color: var(--background);
   /* background-color: #fff; */
   /* Subtle brand-tinted depth so sections don't feel flat */
-  background-image:
+  /* background-image:
     radial-gradient(900px 600px at 10% 0%, color-mix(in srgb, var(--accent-color-soft) 45%, transparent) 0%, transparent 60%),
     radial-gradient(900px 600px at 100% 20%, color-mix(in srgb, var(--primary-color-light) 22%, transparent) 0%, transparent 55%),
-    radial-gradient(900px 600px at 60% 100%, color-mix(in srgb, var(--coffee-color) 18%, transparent) 0%, transparent 55%);
+    radial-gradient(900px 600px at 60% 100%, color-mix(in srgb, var(--coffee-color) 18%, transparent) 0%, transparent 55%); */
   background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;

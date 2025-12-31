@@ -4,43 +4,7 @@ import {
   FiCheck,
   FiArrowRight,
 } from "react-icons/fi";
-import { GiCoffeeBeans, GiFactory, GiBookshelf } from "react-icons/gi";
-
-const services = [
-  {
-    title: "Sustainable Coffee Farming",
-    description:
-      "We cultivate high-altitude Arabica coffee using environmentally friendly practices that enhance soil health, yield, and long-term productivity.",
-    icon: GiCoffeeBeans,
-    features: [
-      "Climate-smart farming techniques",
-      "Improved agronomic practices",
-      "Farmer training & support",
-    ],
-  },
-  {
-    title: "Value Addition & Processing",
-    description:
-      "We process coffee from cherry to clean bean, ensuring improved quality, storage, grading, and access to premium markets.",
-    icon: GiFactory,
-    features: [
-      "Professional hulling & drying",
-      "Quality grading & sorting",
-      "Warehouse receipt systems",
-    ]
-  },
-  {
-    title: "Training & Community Empowerment",
-    description:
-      "We equip women and youth with skills in modern agronomy, barista craft, leadership, and financial literacy, positioning them for economic growth.",
-    icon: GiBookshelf,
-    features: [
-      "Women's leadership programs",
-      "Barista training & certification",
-      "Youth agricultural education",
-    ]
-  },
-];
+import { SERVICES } from "@/assets/data";
 
 export default function ServicesSection() {
   return (
@@ -68,7 +32,7 @@ export default function ServicesSection() {
 
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
-            {services.map((service, index) => {
+            {SERVICES.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <motion.div

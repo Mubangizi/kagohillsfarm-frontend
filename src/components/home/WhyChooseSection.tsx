@@ -1,29 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiAward, FiUsers, FiZap, FiShield } from "react-icons/fi";
-
-const features = [
-  {
-    name: "Premium Ugandan Arabica",
-    description: "Grown in rich volcanic soils and processed with precision.",
-    icon: FiUsers,
-  },
-  {
-    name: "Ethical & Sustainable Farming",
-    description: "Climate-smart, environmentally responsible techniques guide everything we do.",
-    icon: FiZap,
-  },
-  {
-    name: "High Social Impact",
-    description: "Every purchase supports farmers, women’s groups, and youth employment",
-    icon: FiShield,
-  },
-  {
-    name: "Full Value Chain Control",
-    description: "From seedlings to storage and processing, we ensure consistent quality and fair returns for farmers.",
-    icon: FiAward,
-  },
-];
+import { WHY_CHOOSE_FEATURES } from "@/assets/data";
 
 
 export default function WhyChooseSection() {
@@ -50,7 +27,7 @@ export default function WhyChooseSection() {
         {/* Features */}
         <div className="mx-auto mt-10 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-7xl">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-4 md:grid-cols-2 lg:gap-y-16">
-            {features.map((feature, index) => {
+            {WHY_CHOOSE_FEATURES.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <motion.div

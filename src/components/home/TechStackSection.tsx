@@ -1,87 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { 
-  FiCode, FiLayers, FiGlobe, FiMonitor, FiFileText, FiEdit,
-  FiServer, FiDatabase, FiCoffee, FiBox, FiHash, FiTrendingUp,
-  FiSmartphone, FiTablet, FiCircle, FiSquare, FiGrid, FiZap,
-  FiCloud, FiSettings, FiKey, FiPackage, FiRotateCw, FiTool,
-  FiHardDrive, FiBookOpen, FiSearch, FiCpu, FiActivity, FiBarChart
-} from "react-icons/fi";
-
-const techCategories = [
-  {
-    title: "Women's Groups",
-    description: "Partnering with local women's organizations for economic empowerment",
-    technologies: [
-      { name: "Kinkiizi Coffee SACCO", icon: FiCode },
-      { name: "Kakindo Women Group", icon: FiLayers },
-      { name: "Nyakagyezi Tweyambe", icon: FiGlobe },
-      { name: "Local SACCOs", icon: FiMonitor },
-      { name: "Self-Help Groups", icon: FiFileText },
-      { name: "Farmer Cooperatives", icon: FiEdit }
-    ]
-  },
-  {
-    title: "Training Partners",
-    description: "Educational institutions supporting skills development and capacity building",
-    technologies: [
-      { name: "Coffee Farm School", icon: FiServer },
-      { name: "NAADS Extension", icon: FiDatabase },
-      { name: "Agronomy Experts", icon: FiCoffee },
-      { name: "Barista Training", icon: FiBox },
-      { name: "Leadership Programs", icon: FiHash },
-      { name: "Financial Literacy", icon: FiTrendingUp }
-    ]
-  },
-  {
-    title: "Financial Partners",
-    description: "Banking and financial institutions enabling farmer access to credit and markets",
-    technologies: [
-      { name: "Centenary Bank", icon: FiSmartphone },
-      { name: "PostBank Uganda", icon: FiTablet },
-      { name: "Local SACCOs", icon: FiCircle },
-      { name: "Microfinance Groups", icon: FiSquare },
-      { name: "Warehouse Receipts", icon: FiGrid },
-      { name: "Credit Access", icon: FiZap }
-    ]
-  },
-  {
-    title: "Community Network",
-    description: "Local farmers and community members driving sustainable growth",
-    technologies: [
-      { name: "Banyakinkiizi Assoc.", icon: FiCloud },
-      { name: "Smallholder Farmers", icon: FiSettings },
-      { name: "Coffee Growers", icon: FiKey },
-      { name: "Coffee Processors", icon: FiPackage },
-      { name: "Local Businesses", icon: FiRotateCw },
-      { name: "Community Leaders", icon: FiTool }
-    ]
-  },
-  {
-    title: "Government & NGOs",
-    description: "Policy support and development programs for agricultural advancement",
-    technologies: [
-      { name: "District Leaders", icon: FiHardDrive },
-      { name: "Agricultural Dept.", icon: FiBookOpen },
-      { name: "NGO Partners", icon: FiDatabase },
-      { name: "Extension Workers", icon: FiSearch },
-      { name: "Policy Makers", icon: FiActivity },
-      { name: "Development Orgs", icon: FiZap }
-    ]
-  },
-  {
-    title: "Tourism & Markets",
-    description: "Building coffee tourism and expanding market access for premium Ugandan coffee",
-    technologies: [
-      { name: "Tourism Boards", icon: FiCpu },
-      { name: "Export Markets", icon: FiActivity },
-      { name: "Local Retailers", icon: FiCode },
-      { name: "Coffee Buyers", icon: FiZap },
-      { name: "Tour Operators", icon: FiBarChart },
-      { name: "Marketing Partners", icon: FiTrendingUp }
-    ]
-  }
-];
+import { COLLABORATORS } from "@/assets/data";
 
 export default function TechStackSection() {
   return (
@@ -106,7 +25,7 @@ export default function TechStackSection() {
         {/* Technology Categories */}
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-3 lg:gap-x-8">
-            {techCategories.map((category, categoryIndex) => (
+            {COLLABORATORS.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -122,7 +41,7 @@ export default function TechStackSection() {
                   {category.description}
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  {category.technologies.map((tech, techIndex) => {
+                  {category.partners.map((tech, techIndex) => {
                     const IconComponent = tech.icon;
                     return (
                       <motion.div

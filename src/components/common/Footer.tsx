@@ -2,52 +2,33 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { twitterLink, linkedinLink, email } from "@/assets/data";
+import { GoHome, GoInfo, GoImage } from "react-icons/go";
+import { TWITTER_LINK, LINKEDIN_LINK, EMAIL, ADDRESS } from "@/assets/data";
 import { LogoDarkIcon } from "@/assets/images";
 
-const navigation = {
-  product: [
-    { name: "Our Coffee", href: "#" },
-    { name: "Processing", href: "#" },
-    { name: "Farm Visits", href: "#" },
-    { name: "Coffee Tourism", href: "#" },
-  ],
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Our Story", href: "/about" },
-    { name: "Team", href: "/about" },
-    { name: "Impact", href: "/about" },
-  ],
-  resources: [
-    { name: "Women's Programs", href: "#" },
-    { name: "Training", href: "#" },
-    { name: "Partnerships", href: "#" },
-    { name: "Support Us", href: "/contact" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Cookie Policy", href: "#" },
-    { name: "Contact", href: "/contact" },
-  ],
-  social: [
-    {
-      name: "Email",
-      href: `mailto:${email}`,
-      icon: FaEnvelope,
-    },
-    {
-      name: "LinkedIn",
-      href: linkedinLink,
-      icon: FaLinkedin,
-    },
-    {
-      name: "Twitter",
-      href: twitterLink,
-      icon: FaTwitter,
-    },
-  ],
-};
+const quickLinks = [
+  { name: "Home", href: "/", icon: GoHome },
+  { name: "About", href: "/about", icon: GoInfo },
+  { name: "Gallery", href: "/gallery", icon: GoImage },
+];
+
+const socialLinks = [
+  {
+    name: "Email",
+    href: `mailto:${EMAIL}`,
+    icon: FaEnvelope,
+  },
+  {
+    name: "LinkedIn",
+    href: LINKEDIN_LINK,
+    icon: FaLinkedin,
+  },
+  {
+    name: "Twitter",
+    href: TWITTER_LINK,
+    icon: FaTwitter,
+  },
+];
 
 const Footer = () => {
   return (
@@ -55,115 +36,73 @@ const Footer = () => {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <Link href="/" className="flex items-center gap-x-2">
-                <Image
-                  alt="Kago Hill Farm"
-                  src={LogoDarkIcon}
-                  width={40}
-                  height={40}
-                />
-                <span className="text-2xl font-semibold text-white">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {/* Logo and Tagline */}
+          <div className="space-y-4 text-center md:text-left">
+            <Link href="/" className="inline-flex items-center gap-x-3">
+              <Image
+                alt="Kago Hill Farm"
+                src={LogoDarkIcon}
+                width={48}
+                height={48}
+              />
+              <span className="text-2xl font-bold text-white">
                 Kago Hill Farm
-                </span>
-              </Link>
-              <p className="text-sm leading-6 text-gray-300">
-                Crafting exceptional coffee, empowering communities
-              </p>
-            </div>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
+              </span>
+            </Link>
+            <p className="text-sm leading-6 text-gray-300">
+              Crafting exceptional coffee, empowering communities
+            </p>
+            <p className="text-xs text-gray-400">
+              {ADDRESS}
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-sm font-semibold text-white mb-4">Quick Links</h3>
+            <nav className="grid grid-cols-3 gap-x-6 gap-y-3 w-fit">
+              {quickLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-2 text-xs font-medium text-gray-300 hover:text-white transition-colors duration-200"
+                  >
+                    <Icon className="h-4 w-4" />
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Social Links */}
+          <div className="text-center md:text-right">
+            <h3 className="text-sm font-semibold text-white mb-4">Connect With Us</h3>
+            <div className="flex justify-center md:justify-end space-x-6">
+              {socialLinks.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-500 hover:text-gray-400 transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                  <item.icon className="h-5 w-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">
-                  Product
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.product.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white transition-colors duration-200"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">
-                  Company
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white transition-colors duration-200"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">
-                  Resources
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.resources.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white transition-colors duration-200"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">
-                  Legal
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white transition-colors duration-200"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-400">
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-xs text-gray-400 text-center">
             &copy; {new Date().getFullYear()} Kago Hill Farm. All rights reserved.
           </p>
         </div>

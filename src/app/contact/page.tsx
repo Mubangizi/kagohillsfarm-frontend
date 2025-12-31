@@ -1,4 +1,4 @@
-import { currentUrl } from "@/assets/data";
+import { CURRENT_URL } from "@/assets/data";
 import ContactContent from "@/components/contact/ContactContent";
 
 
@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: "Contact Kago Hill Farm - Partner With Us",
     description: "Join us in transforming lives through coffee. Support our mission to empower women and communities in Uganda.",
-    url: `${currentUrl}/contact`,
+    url: `${CURRENT_URL}/contact`,
   },
 };
 

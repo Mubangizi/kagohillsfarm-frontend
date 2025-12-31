@@ -5,7 +5,7 @@ import HeaderWrapper from "@/components/common/HeaderWrapper";
 import Footer from "@/components/common/Footer";
 import { AnimatedBackground, ParticleBackground } from "@/components/common/Animated";
 import HeaderLightProvider from "@/components/providers/HeaderLightProvider";
-import { currentUrl } from "@/assets/data";
+import { CURRENT_URL } from "@/assets/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(currentUrl),
+  metadataBase: new URL(CURRENT_URL),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Kago Hill Farm - Crafting Exceptional Coffee, Empowering Communities",
     description: "A women-led coffee enterprise in the hills of Kambuga, creating world-class coffee while uplifting the people who grow it.",
-    url: currentUrl,
+    url: CURRENT_URL,
     siteName: "Kago Hill Farm",
     images: [
       {

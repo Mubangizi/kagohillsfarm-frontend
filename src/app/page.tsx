@@ -4,17 +4,17 @@ import ProcessSection from "@/components/home/ProcessSection";
 import CTASection from "@/components/home/CTASection";
 import TechStackSection from "@/components/home/TechStackSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
-import { currentUrl, email, phone, linkedinLink } from "@/assets/data";
+import { CURRENT_URL, EMAIL, LINKEDIN_LINK, PHONE, TWITTER_LINK } from "@/assets/data";
 
 const structuredData = {
   "@context": "https://kagohillfarm.com",
   "@type": "Organization",
   "name": "Kago Hill Farm",
-  "url": currentUrl,
-  "logo": `${currentUrl}/logo.png`,
+  "url": CURRENT_URL,
+  "logo": `${CURRENT_URL}/logo.png`,
   "description": "Women-led coffee enterprise in Kambuga, Kanungu creating world-class Ugandan coffee while empowering women, training youth, and transforming local livelihoods through sustainable farming.",
-  "email": email,
-  "telephone": phone,
+  "email": EMAIL,
+  "telephone": PHONE,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Kambuga",
@@ -22,8 +22,8 @@ const structuredData = {
     "addressCountry": "Uganda"
   },
   "sameAs": [
-    linkedinLink,
-    "https://twitter.com/kagohillfarm"
+    TWITTER_LINK,
+    LINKEDIN_LINK
   ],
   "serviceType": [
     "Coffee Farming",

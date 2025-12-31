@@ -1,69 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { 
-  FiSearch, 
-  FiPenTool, 
-  FiZap, 
-  FiShield, 
-  FiTool,
-  FiSettings,
-  FiRotateCw,
-  FiStar,
-  FiRefreshCw,
-  FiCheck
-} from "react-icons/fi";
-
-const processSteps = [
-  {
-    step: "01",
-    name: "Planting & Cultivation",
-    description: "We plant high-quality Arabica seedlings and nurture them using climate-smart, sustainable farming practices.",
-    details: ["Quality seedling selection", "Soil health management", "Climate-smart techniques", "Organic farming practices"],
-    icon: FiSearch
-  },
-  {
-    step: "02", 
-    name: "Growing & Maintenance",
-    description: "Careful tending of coffee trees with proper pruning, mulching, and pest management for optimal growth.",
-    details: ["Regular pruning", "Mulching & composting", "Natural pest control", "Shade tree management"],
-    icon: FiPenTool
-  },
-  {
-    step: "03",
-    name: "Harvesting",
-    description: "Selective hand-picking of ripe coffee cherries at peak maturity to ensure premium quality.",
-    details: ["Hand-picking techniques", "Cherry selection", "Multiple harvest passes", "Quality control"],
-    icon: FiZap
-  },
-  {
-    step: "04",
-    name: "Processing",
-    description: "Professional processing including pulping, fermentation, washing, and drying to preserve coffee quality.",
-    details: ["Cherry pulping", "Fermentation control", "Clean water washing", "Sun drying on raised beds"],
-    icon: FiShield
-  },
-  {
-    step: "05",
-    name: "Hulling & Grading", 
-    description: "Mechanical hulling removes parchment, followed by careful grading and sorting for market-ready green beans.",
-    details: ["Mechanical hulling", "Size grading", "Quality sorting", "Defect removal"],
-    icon: FiTool
-  },
-  {
-    step: "06",
-    name: "Storage & Marketing",
-    description: "Proper storage in warehouses with climate control, leading to better pricing and market access.", 
-    details: ["Warehouse storage", "Quality preservation", "Warehouse receipts", "Market linkages"],
-    icon: FiSettings
-  }
-];
-
-const methodologies = [
-  { name: "Organic Methods", description: "Chemical-free, environmentally sustainable farming", icon: FiRotateCw },
-  { name: "Women-Led", description: "Empowering women in all stages of production", icon: FiSettings },
-  { name: "Fair Trade", description: "Equitable pricing and transparent transactions", icon: FiStar },
-  { name: "Community-First", description: "Training, employment, and shared prosperity", icon: FiRefreshCw }
-];
+import { FiCheck } from "react-icons/fi";
+import { PROCESS_STEPS, CORE_VALUES } from "@/assets/data";
 
 export default function ProcessSection() {
   return (
@@ -88,7 +26,7 @@ export default function ProcessSection() {
         {/* Process Steps */}
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <div className="grid max-w-xl grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {processSteps.map((step, index) => {
+            {PROCESS_STEPS.map((step, index) => {
               const IconComponent = step.icon;
               return (
                 <motion.div
@@ -145,7 +83,7 @@ export default function ProcessSection() {
               </p>
             </div>
             <dl className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8">
-              {methodologies.map((methodology, index) => {
+              {CORE_VALUES.map((methodology, index) => {
                 const IconComponent = methodology.icon;
                 return (
                   <motion.div

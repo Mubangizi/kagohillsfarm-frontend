@@ -1,55 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiPhone, FiMail, FiMapPin, FiLinkedin, FiTwitter } from "react-icons/fi";
-import { email, phone, address, linkedinLink, twitterLink, phone_detail } from "@/assets/data";
+import { FiMapPin } from "react-icons/fi";
+import { CONTACT_METHODS, SOCIAL_LINKS, OFFICE_HOURS } from "@/assets/data";
 import ContactForm from "./ContactForm";
-
-const contactMethods = [
-  {
-    icon: FiPhone,
-    title: "Call Us",
-    description: "Speak directly with our team",
-    detail: phone_detail,
-    action: `tel:${phone}`,
-    available: "Mon-Fri 9AM-6PM EAT"
-  },
-  {
-    icon: FiMail,
-    title: "Email Us",
-    description: "Get a detailed response within 24 hours",
-    detail: email,
-    action: `mailto:${email}`,
-    available: "We respond within 24 hours"
-  },
-  {
-    icon: FiMapPin,
-    title: "Visit Us",
-    description: "Meet us at our office",
-    detail: address,
-    action: "#",
-    available: "Farm visits welcome"
-  }
-];
-
-const socialLinks = [
-  {
-    icon: FiLinkedin,
-    name: "LinkedIn",
-    href: linkedinLink,
-    description: "Connect with us professionally"
-  },
-  {
-    icon: FiTwitter,
-    name: "Twitter",
-    href: twitterLink,
-    description: "Follow us for updates"
-  }
-];
-
-const officeHours = [
-  { day: "Monday - Saturday", hours: "8:00 AM - 5:00 PM" },
-  { day: "Sunday", hours: "By appointment" }
-];
 
 export default function ContactContent() {
 
@@ -78,9 +31,8 @@ export default function ContactContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
             className="mx-auto max-w-4xl text-center"
           >
             <h2 className="text-base font-semibold leading-7 text-gray-600">Multiple Ways to Reach Us</h2>
@@ -91,15 +43,14 @@ export default function ContactContent() {
 
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {contactMethods.map((method, index) => {
+              {CONTACT_METHODS.map((method, index) => {
                 const IconComponent = method.icon;
                 return (
                   <motion.div
                     key={method.title}
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 + (index * 0.1) }}
-                    viewport={{ once: true }}
                     className="text-center group hover:bg-gray-50 p-8 rounded-xl transition-colors duration-200"
                   >
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-primary-color group-hover:bg-gray-700 transition-colors duration-200">
@@ -147,7 +98,7 @@ export default function ContactContent() {
               <div className="mt-8">
                 <h3 className="text-lg font-semibold primary-color mb-4">Farm Hours</h3>
                 <div className="space-y-2">
-                  {officeHours.map((schedule, index) => (
+                  {OFFICE_HOURS.map((schedule, index) => (
                     <div key={index} className="flex justify-between">
                       <span className="text-gray-600">{schedule.day}</span>
                       <span className="font-medium primary-color">{schedule.hours}</span>
@@ -159,7 +110,7 @@ export default function ContactContent() {
               <div className="mt-8">
                 <h3 className="text-lg font-semibold primary-color mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => {
+                  {SOCIAL_LINKS.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
                       <motion.a

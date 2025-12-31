@@ -1,4 +1,4 @@
-import { currentUrl } from "@/assets/data";
+import { CURRENT_URL } from "@/assets/data";
 import GalleryContent from "@/components/gallery/GalleryContent";
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
         title: "Gallery - Life at Kago Hill Farm",
         description:
             "Browse our farm, our people, and the journey from seed to cup—organized by category.",
-        url: `${currentUrl}/gallery`,
+        url: `${CURRENT_URL}/gallery`,
     },
 };
 

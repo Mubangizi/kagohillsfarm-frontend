@@ -1,84 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiTarget, FiHeart, FiUsers, FiTrendingUp, FiShield, FiZap } from "react-icons/fi";
 import AnimatedButton from "@/components/common/Buttons";
-import { FaEnvelope, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
-
-type TeamMember = {
-  name: string;
-  role: string;
-  image: string;
-  social?: {
-    email?: string;
-    linkedin?: string;
-    twitter?: string;
-    github?: string;
-  };
-};
-const teamMembers: TeamMember[] = [
-  {
-    name: "Margaret Mugisha",
-    role: "Founder & Inspiration",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&h=900&fit=crop&auto=format&sig=11",
-    social: {
-      linkedin: "https://www.linkedin.com/company/kagohillfarm/",
-      twitter: "https://twitter.com/kagohillfarm",
-      email: "yvonneatwiine@gmail.com",
-    },
-  },
-  {
-    name: "Yvonne Atwiine Mwesige",
-    role: "Program Director",
-    image: "/team/yvonne.jpg"
-  },
-  {
-    name: "Community Partners",
-    role: "30+ Women Farmers",
-    image: "/team/community.jpg"
-  }
-];
-
-
-const problems = [
-  {
-    icon: FiTarget,
-    title: "Low Monetary Returns for Farmers",
-    description: "Most smallholder farmers sell coffee in cherry form at giveaway prices due to lack of processing capacity, storage, and market access."
-  },
-  {
-    icon: FiHeart,
-    title: "Limited Value Addition",
-    description: "Without access to hulling, drying, and grading facilities, farmers miss out on the premium earned from clean, processed coffee."
-  },
-  {
-    icon: FiUsers,
-    title: "Economic Marginalization of Women",
-    description: "Women provide most of the labor but receive the least financial benefit. Their potential remains untapped."
-  },
-  {
-    icon: FiTrendingUp,
-    title: "Absence of a Coffee-Drinking Culture",
-    description: "Local consumption is low, meaning farmers rarely experience the end product of their labor, and local market potential remains unexplored."
-  },
-  {
-    icon: FiShield,
-    title: "Youth Unemployment",
-    description: "Young people lack skills in barista training, coffee processing, and modern agricultural methods."
-  },
-  {
-    icon: FiZap,
-    title: "Limited Financial Access",
-    description: "Without proper storage, farmers cannot benefit from warehouse receipts or use their produce as collateral for credit."
-  }
-];
-
-const stats = [
-  { value: "2019", label: "Farm Established" },
-  { value: "20+", label: "Acres of Coffee" },
-  { value: "30+", label: "Women Employed" },
-  { value: "100%", label: "Arabica Quality" }
-];
+import { TEAM_MEMBERS, PROBLEMS, STATS } from "@/assets/data";
 
 export default function AboutContent() {
   return (
@@ -106,9 +31,8 @@ export default function AboutContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto max-w-4xl"
           >
             <h2 className="text-base font-semibold leading-7 text-gray-600">Our Story</h2>
@@ -196,7 +120,7 @@ export default function AboutContent() {
 
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {problems.map((problem, index) => {
+              {PROBLEMS.map((problem, index) => {
                 const IconComponent = problem.icon;
                 return (
                   <motion.div
@@ -237,7 +161,7 @@ export default function AboutContent() {
 
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-              {stats.map((stat, index) => (
+              {STATS.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.5 }}
@@ -276,7 +200,7 @@ export default function AboutContent() {
 
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-1 gap-15 md:grid-cols-2 lg:grid-cols-3">
-              {teamMembers.map((member, index) => (
+              {TEAM_MEMBERS.map((member, index) => (
                 <motion.div
                   key={member.name}
                   initial={{ opacity: 0, y: 20 }}
@@ -321,17 +245,6 @@ export default function AboutContent() {
                           className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100 hover:text-gray-600"
                         >
                           <FaTwitter className="h-5 w-5" />
-                        </a>
-                      )}
-                      {member.social.github && (
-                        <a
-                          href={member.social.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name} on GitHub`}
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-gray-100 hover:text-gray-600"
-                        >
-                          <FaGithub className="h-5 w-5" />
                         </a>
                       )}
                       {member.social.email && (
