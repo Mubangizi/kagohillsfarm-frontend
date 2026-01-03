@@ -9,6 +9,7 @@ import {
   FiCpu, FiBarChart, FiPhone, FiMail, FiMapPin, FiLinkedin, FiTwitter
 } from "react-icons/fi";
 import { GiCoffeeBeans, GiFactory, GiBookshelf } from "react-icons/gi";
+import { YvonneTeamImage, AnishaTeamImage, TashiousTeamImage } from "./images";
 
 // ============================================
 // CONTACT INFORMATION
@@ -27,24 +28,24 @@ export const PROGRAM_DIRECTOR = "Yvonne Atwiine Mwesige";
 // ============================================
 export const TEAM_MEMBERS = [
   {
-    name: "Margaret Mugisha",
-    role: "Founder & Inspiration",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&h=900&fit=crop&auto=format&sig=11",
+    name: "Yvonne Mwesige Atwiine",
+    role: "CO-Founder",
+    image: YvonneTeamImage,
+  },
+  {
+    name: "Anisha Alinda",
+    role: "CO-Founder",
+    image: AnishaTeamImage,
     social: {
-      linkedin: LINKEDIN_LINK,
-      twitter: TWITTER_LINK,
-      email: EMAIL,
+      linkedin: "https://www.linkedin.com/in/anisha-alinda-5b4555200/",
+      twitter: "https://twitter.com/anisha_alinda",
+      email: "anishaalinda@gmail.com",
     },
   },
   {
-    name: "Yvonne Atwiine Mwesige",
-    role: "Program Director",
-    image: "/team/yvonne.jpg"
-  },
-  {
-    name: "Community Partners",
-    role: "30+ Women Farmers",
-    image: "/team/community.jpg"
+    name: "Tashious Ainomugisha",
+    role: "CO-Founder",
+    image: TashiousTeamImage,
   }
 ];
 
