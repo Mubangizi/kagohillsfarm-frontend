@@ -179,42 +179,48 @@ export const PROCESS_STEPS = [
     name: "Planting & Cultivation",
     description: "We plant high-quality Arabica seedlings and nurture them using climate-smart, sustainable farming practices.",
     details: ["Quality seedling selection", "Soil health management", "Climate-smart techniques", "Organic farming practices"],
-    icon: FiSearch
+    icon: FiSearch,
+    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80&auto=format&fit=crop"
   },
   {
     step: "02", 
     name: "Growing & Maintenance",
     description: "Careful tending of coffee trees with proper pruning, mulching, and pest management for optimal growth.",
     details: ["Regular pruning", "Mulching & composting", "Natural pest control", "Shade tree management"],
-    icon: FiPenTool
+    icon: FiPenTool,
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80&auto=format&fit=crop"
   },
   {
     step: "03",
     name: "Harvesting",
     description: "Selective hand-picking of ripe coffee cherries at peak maturity to ensure premium quality.",
     details: ["Hand-picking techniques", "Cherry selection", "Multiple harvest passes", "Quality control"],
-    icon: FiZap
+    icon: FiZap,
+    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80&auto=format&fit=crop"
   },
   {
     step: "04",
     name: "Processing",
     description: "Professional processing including pulping, fermentation, washing, and drying to preserve coffee quality.",
     details: ["Cherry pulping", "Fermentation control", "Clean water washing", "Sun drying on raised beds"],
-    icon: FiShield
+    icon: FiShield,
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80&auto=format&fit=crop"
   },
   {
     step: "05",
     name: "Hulling & Grading", 
     description: "Mechanical hulling removes parchment, followed by careful grading and sorting for market-ready green beans.",
     details: ["Mechanical hulling", "Size grading", "Quality sorting", "Defect removal"],
-    icon: FiTool
+    icon: FiTool,
+    image: "https://images.unsplash.com/photo-1442411210769-b95c4632195e?w=800&q=80&auto=format&fit=crop"
   },
   {
     step: "06",
     name: "Storage & Marketing",
     description: "Proper storage in warehouses with climate control, leading to better pricing and market access.", 
     details: ["Warehouse storage", "Quality preservation", "Warehouse receipts", "Market linkages"],
-    icon: FiSettings
+    icon: FiSettings,
+    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80&auto=format&fit=crop"
   }
 ];
 

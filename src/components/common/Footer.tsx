@@ -13,21 +13,21 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  {
-    name: "Email",
+    {
+      name: "Email",
     href: `mailto:${EMAIL}`,
-    icon: FaEnvelope,
-  },
-  {
-    name: "LinkedIn",
+      icon: FaEnvelope,
+    },
+    {
+      name: "LinkedIn",
     href: LINKEDIN_LINK,
-    icon: FaLinkedin,
-  },
-  {
-    name: "Twitter",
+      icon: FaLinkedin,
+    },
+    {
+      name: "Twitter",
     href: TWITTER_LINK,
-    icon: FaTwitter,
-  },
+      icon: FaTwitter,
+    },
 ];
 
 const Footer = () => {
@@ -42,23 +42,23 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="space-y-4 text-center md:text-left">
             <Link href="/" className="inline-flex items-center gap-x-3">
-              <Image
-                alt="Kago Hill Farm"
-                src={LogoDarkIcon}
+                <Image
+                  alt="Kago Hill Farm"
+                  src={LogoDarkIcon}
                 width={48}
                 height={48}
-              />
+                />
               <span className="text-2xl font-bold text-white">
                 Kago Hill Farm
-              </span>
-            </Link>
-            <p className="text-sm leading-6 text-gray-300">
+                </span>
+              </Link>
+              <p className="text-sm leading-6 text-gray-300">
               Crafting exceptional coffee, empowering communities
             </p>
             <p className="text-xs text-gray-400">
               {ADDRESS}
-            </p>
-          </div>
+              </p>
+            </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center">

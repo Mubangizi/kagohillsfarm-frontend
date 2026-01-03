@@ -7,7 +7,7 @@ import WhyChooseSection from "@/components/home/WhyChooseSection";
 import { CURRENT_URL, EMAIL, LINKEDIN_LINK, PHONE, TWITTER_LINK } from "@/assets/data";
 
 const structuredData = {
-  "@context": "https://kagohillfarm.com",
+  "@context": CURRENT_URL,
   "@type": "Organization",
   "name": "Kago Hill Farm",
   "url": CURRENT_URL,
@@ -44,7 +44,7 @@ const structuredData = {
 };
 
 const serviceStructuredData = {
-  "@context": "https://kagohillfarm.com",
+  "@context": CURRENT_URL,
   "@type": "Service",
   "name": "Coffee Production & Community Empowerment Services",
   "description": "Sustainable coffee farming, processing, women's empowerment programs, barista training, and agricultural education creating world-class Ugandan coffee.",
