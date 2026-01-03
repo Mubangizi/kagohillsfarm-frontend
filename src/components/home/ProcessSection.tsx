@@ -65,7 +65,7 @@ export default function ProcessSection() {
 
                     {/* Step Number Badge */}
                     <div className="absolute top-4 left-4">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-amber-500 text-white font-bold text-lg shadow-lg ring-4 ring-white/20">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-amber-500 text-white font-bold text-lg shadow-lg ring-2 ring-white/20">
                         {step.step}
                       </div>
                     </div>
@@ -74,7 +74,7 @@ export default function ProcessSection() {
                     <div className="absolute top-4 right-4">
                       <div className="flex items-center justify-center h-10 w-10 rounded-full bg-white/90 backdrop-blur-sm">
                         <IconComponent
-                          className="h-5 w-5 text-primary-color"
+                          className="h-5 w-5 primary-color"
                           aria-hidden="true"
                         />
                       </div>
