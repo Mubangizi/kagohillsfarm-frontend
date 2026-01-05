@@ -22,7 +22,7 @@ const motionVariants = {
   hover: {
     scale: 1.05,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 400,
       damping: 10,
     },
@@ -30,7 +30,7 @@ const motionVariants = {
   tap: {
     scale: 0.95,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 400,
       damping: 10,
     },
@@ -54,7 +54,9 @@ export default function AnimatedButton({
       className="cursor-pointer"
     >
       {href ? (
-        <Link href={href} className={`${buttonVariants[variant]} ${className}`}
+        <Link
+          href={href}
+          className={`${buttonVariants[variant]} ${className}`}
           style={{ color: color }}
         >
           {children}
