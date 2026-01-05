@@ -1,40 +1,79 @@
-# Kago Hill Farm
+# Kago Hills: Next.js + Sanity CMS
+
+This is a monorepo containing the Kago Hills frontend and Sanity Studio for content management.
+
+## Project Structure
+
+```
+kago-hills-fronted/
+├── frontend/        # Next.js frontend application
+├── studio/          # Sanity Studio CMS
+└── package.json     # Root workspace configuration
+```
 
 ## Getting Started
 
-### Prerequisites
+### Install Dependencies
 
-- Node.js 18+
-- Yarn 1.x
-- Kago Hill Farm API credentials
+Install all dependencies for both workspaces:
 
-### Installation
+```bash
+yarn install
+```
 
-1. Clone the repository:
+### Development
 
-2. Install dependencies:
+Run both frontend and studio simultaneously:
 
-   ```bash
-   yarn install
-   ```
+```bash
+yarn dev
+```
 
-3. Create `.env` file:
+Or run them individually:
 
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+yarn dev:frontend    # Runs Next.js on http://localhost:3000
+yarn dev:studio      # Runs Sanity Studio on http://localhost:3333
+```
 
-4. Start development server:
+### Building
 
-   ```bash
-   yarn dev
-   ```
+Build all workspaces:
+
+```bash
+yarn build
+```
+
+Build specific workspace:
+
+```bash
+yarn build:frontend
+# or
+yarn build:studio
+```
+
+## Workspaces
+
+### Frontend (`frontend/`)
+
+Next.js application for the Kago Hills website.
+
+- **Development**: `yarn workspace frontend dev`
+- **Build**: `yarn workspace frontend build`
+- **Start**: `yarn workspace frontend start`
+- **Port**: <http://localhost:3000>
+
+### Studio (`studio/`)
+
+Sanity Studio for content management.
+
+- **Development**: `yarn workspace studio dev`
+- **Build**: `yarn workspace studio build`
+- **Deploy**: `yarn workspace studio deploy`
+- **Port**: <http://localhost:3333>
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Sanity Documentation](https://www.sanity.io/docs)
+- [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
