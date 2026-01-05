@@ -13,7 +13,7 @@ kago-hills-fronted/
 
 ## Getting Started
 
-### Install Dependencies
+### 1. Install Dependencies
 
 Install all dependencies for both workspaces:
 
@@ -21,7 +21,21 @@ Install all dependencies for both workspaces:
 yarn install
 ```
 
-### Development
+### 2. Configure Environment Variables
+
+Copy the example files and fill in your Sanity project credentials:
+
+```bash
+# Frontend
+cp frontend/.env.example frontend/.env.local
+
+# CMS
+cp cms/.env.example cms/.env
+```
+
+Get your Project ID from <https://www.sanity.io/manage> and add it to both files.
+
+### 3. Development
 
 Run both frontend and cms simultaneously:
 

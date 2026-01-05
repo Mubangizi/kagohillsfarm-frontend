@@ -20,98 +20,13 @@ type GalleryImage = {
     images?: SubImage[];
 };
 
-// Gallery images - duplicate these for infinite scroll effect
-const galleryImages: GalleryImage[] = [
-    {
-        id: "1",
-        imageUrl: "https://images.unsplash.com/photo-1465447142348-e9952c393450?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee farm landscape",
-        title: "Hills of Kambuga at Sunrise",
-        category: "Farm & Landscape",
-    },
-    {
-        id: "2",
-        imageUrl: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee trees",
-        title: "Coffee Trees in Lush Terrain",
-        category: "Farm & Landscape",
-    },
-    {
-        id: "3",
-        imageUrl: "https://images.unsplash.com/photo-1528826194825-5bb3d2ce127a?w=800&q=80&auto=format&fit=crop",
-        alt: "Sorting coffee cherries",
-        title: "Women Sorting Coffee Cherries",
-        category: "Women at Work",
-    },
-    {
-        id: "4",
-        imageUrl: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee cherries",
-        title: "Hand-picking Ripe Cherries",
-        category: "Women at Work",
-    },
-    {
-        id: "5",
-        imageUrl: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee drying",
-        title: "Drying Coffee on Raised Beds",
-        category: "Coffee Processing",
-    },
-    {
-        id: "6",
-        imageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee processing",
-        title: "From Cherry to Clean Bean",
-        category: "Coffee Processing",
-        images: [
-            {
-                id: "6.1",
-                imageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&q=85&auto=format&fit=crop",
-                alt: "Coffee processing - Step 1",
-            },
-            {
-                id: "6.2",
-                imageUrl: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=1200&q=85&auto=format&fit=crop",
-                alt: "Coffee processing - Step 2",
-            },
-            {
-                id: "6.3",
-                imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=85&auto=format&fit=crop",
-                alt: "Coffee processing - Step 3",
-            },
-        ]
-    },
-    {
-        id: "7",
-        imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80&auto=format&fit=crop",
-        alt: "Community training",
-        title: "Hands-on Farm Learning",
-        category: "Training & Community",
-    },
-    {
-        id: "8",
-        imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop",
-        alt: "Women empowerment",
-        title: "Women's Empowerment Sessions",
-        category: "Training & Community",
-    },
-    {
-        id: "9",
-        imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop",
-        alt: "Coffee tasting",
-        title: "Coffee Tasting & Culture",
-        category: "Coffee Culture",
-    },
-    {
-        id: "10",
-        imageUrl: "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?w=800&q=80&auto=format&fit=crop",
-        alt: "Barista training",
-        title: "Barista Training Moments",
-        category: "Coffee Culture",
-    },
-];
+interface GalleryContentProps {
+    images: GalleryImage[];
+}
 
-export default function GalleryContent() {
+export default function GalleryContent({ images }: GalleryContentProps) {
+    // Use provided images or fallback to empty array
+    const galleryImages = images.length > 0 ? images : [];
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImages, setSelectedImages] = useState<SubImage[]>([]);
 
@@ -126,8 +41,8 @@ export default function GalleryContent() {
     };
 
     // Duplicate images for seamless infinite scroll
-    const row1Images = [...galleryImages, ...galleryImages];
-    const row2Images = [...galleryImages, ...galleryImages];
+    const row1Images = galleryImages.length > 0 ? [...galleryImages, ...galleryImages] : [];
+    const row2Images = galleryImages.length > 0 ? [...galleryImages, ...galleryImages] : [];
 
     return (
         <main className="relative overflow-hidden min-h-screen flex flex-col">
@@ -151,6 +66,16 @@ export default function GalleryContent() {
 
             {/* Infinite Scroll Gallery - Two Rows */}
             <section className="relative flex-1 flex flex-col justify-center pb-8">
+                {galleryImages.length === 0 && (
+                    <div className="text-center py-12">
+                        <p className="text-gray-600 text-lg">
+                            No gallery images available yet. Add some images in the Sanity CMS!
+                        </p>
+                    </div>
+                )}
+                
+                {galleryImages.length > 0 && (
+                    <>
                 <style jsx>{`
                     @keyframes scroll-left {
                         0% {
@@ -250,6 +175,8 @@ export default function GalleryContent() {
                         ))}
                     </div>
                 </div>
+                </>
+                )}
             </section>
 
             {/* Image Modal */}

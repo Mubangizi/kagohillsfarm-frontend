@@ -1,5 +1,6 @@
 import { CURRENT_URL } from "@/assets/data";
 import GalleryContent from "@/components/gallery/GalleryContent";
+import { getGalleryImages } from "@/lib/sanity-queries";
 
 export const metadata = {
     title: "Gallery - Life at Kago Hill Farm",
@@ -13,6 +14,10 @@ export const metadata = {
     },
 };
 
-export default function GalleryPage() {
-    return <GalleryContent />;
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function GalleryPage() {
+    const galleryImages = await getGalleryImages();
+    
+    return <GalleryContent images={galleryImages} />;
 }
