@@ -1,19 +1,19 @@
 {
-  "name": "kagohill-cms",
+  "name": "kago-hills-farm",
   "version": "1.0.0",
   "private": true,
   "description": "Kago Hills: Next.js + Sanity CMS Monorepo",
   "workspaces": [
-    "studio",
+    "cms",
     "frontend"
   ],
   "scripts": {
-    "dev": "concurrently -n \"frontend,studio\" -c \"cyan,magenta\" \"yarn dev:frontend\" \"yarn dev:studio\"",
+    "dev": "concurrently -n \"frontend,cms\" -c \"cyan,magenta\" \"yarn dev:frontend\" \"yarn dev:cms\"",
     "dev:frontend": "yarn workspace frontend dev",
-    "dev:studio": "yarn workspace studio dev",
+    "dev:cms": "yarn workspace cms dev",
     "build": "yarn workspaces run build",
     "build:frontend": "yarn workspace frontend build",
-    "build:studio": "yarn workspace studio build",
+    "build:cms": "yarn workspace cms build",
     "lint": "yarn workspace frontend lint",
     "type-check": "yarn workspaces run type-check"
   },
