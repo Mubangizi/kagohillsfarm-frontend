@@ -7,7 +7,7 @@ This is a monorepo containing the Kago Hills frontend and Sanity Studio for cont
 ```
 kago-hills-fronted/
 ├── frontend/        # Next.js frontend application
-├── studio/          # Sanity Studio CMS
+├── cms/          # Sanity Studio CMS
 └── package.json     # Root workspace configuration
 ```
 
@@ -23,7 +23,7 @@ yarn install
 
 ### Development
 
-Run both frontend and studio simultaneously:
+Run both frontend and cms simultaneously:
 
 ```bash
 yarn dev
@@ -33,7 +33,7 @@ Or run them individually:
 
 ```bash
 yarn dev:frontend    # Runs Next.js on http://localhost:3000
-yarn dev:studio      # Runs Sanity Studio on http://localhost:3333
+yarn dev:cms      # Runs Sanity Studio on http://localhost:3333
 ```
 
 ### Building
@@ -49,7 +49,7 @@ Build specific workspace:
 ```bash
 yarn build:frontend
 # or
-yarn build:studio
+yarn build:cms
 ```
 
 ## Workspaces
@@ -63,7 +63,7 @@ Next.js application for the Kago Hills website.
 - **Start**: `yarn workspace frontend start`
 - **Port**: <http://localhost:3000>
 
-### Studio (`studio/`)
+### CMS (`cms/`)
 
 Sanity Studio for content management.
 
