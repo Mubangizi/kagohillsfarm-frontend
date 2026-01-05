@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import gallery from './gallery'
+
+export const schemaTypes = [gallery]
